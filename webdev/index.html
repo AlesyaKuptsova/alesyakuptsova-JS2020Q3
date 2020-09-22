@@ -7,18 +7,18 @@
     <link rel="stylesheet" href="style.css">
     <title>webdev</title>
 </head>
-<body>
+<body class="body">
     <section class="webdev">
         <section class="yourLife">
             <header>
                 <h1>webdev</h1>
-                <img src="assets/logo.svg" alt="logo" class="logo">
+                <a href="index.html"><img src="assets/logo.svg" alt="logo" class="logo"></a>
                 <div class="topnav">
-                    <a class="active" href="#about">About</a>
-                    <a class="navsyllabus">Syllabus</a>
-                    <a class="navproject">Projects</a>
-                    <a class="navfaq">FAQ</a>
-                  </div>
+                    <a class="active" href="index.html">About</a>
+                    <a class="navsyllabus" href="#syllabus">Syllabus</a>
+                    <a class="navproject" href="#projects">Projects</a>
+                    <a class="navfaq" href="#faq">FAQ</a>
+                </div>
             </header>
             <section class="text_yliv">
              your life is webdev
@@ -30,63 +30,64 @@
             <p class="text_button_get_started">get started</p>
             </button>
             <div class="img">
-                <img src="assets/telegram_fff.svg" class="img_telegram">
-                <img src="assets/mail_fff.svg" class="img_mail">
-                <img src="assets/facebook_fff.svg" class="img_facebook">
-                <img src="assets/insta_fff.svg" class="img_insta">
+                <a href="#telegram"><img src="assets/telegram_fff.svg" class="img_telegram" alt="telegram"></a>
+                <a href="#mail"><img src="assets/mail_fff.svg" class="img_mail" alt="mail"></a>
+                <a href="#facebook"><img src="assets/facebook_fff.svg" class="img_facebook" alt="facebook"></a>
+                <a href="#insta"><img src="assets/insta_fff.svg" class="img_insta" alt="insta"></a>
             </div>
         </section>
         <section class="rappresent">
-            <img src="assets/content-image-1.png" class="img_rappresent">
+            <img src="assets/content-image-1.png" class="img_rappresent" alt="content image">
             <div class="text_rappresent">
                 <p class="text_rappresent_imp">Rappresent your idea with a smart Design</p>
                 <p class="text_rappresent_inf">Tasks accompanying and related to programming include: testing, debugging, source code maintenance, <strong>implementation of build systems</strong>, and management of derived artifacts, such as the machine code of computer programs. </p>
                 <button type="button" class="button_get_started_default_rappresent">
-                    <div class="text_button_get_started">get started</div>
+                <text class="text_button_get_started">get started</text>
                 </button>
             </div>
         </section>
-        <table class="ourCommunity">
-            <th class="ourCommunity_left">
-                <img src="assets/userpic.svg" class="img_user">
-                <p class="p_text_ourcommunity">our community</p>
-                <p class="p_user_card">A hacker is any skilled computer expert that uses their technical knowledge to overcome a problem, but it can also mean a security hacker in common language</p>
-            </th>
-            <th class="ourCommunity_right">
-                <div class="slider_navigation">
-                    <img src="assets/arrow-left.svg" class="arrow_left">
-                    <img src="assets/1.svg" class="first">
-                    <img src="assets/divider-icon.svg" class="divider_icon">
-                    <img src="assets/5.svg" class="five">
-                    <img src="assets/arrow-right.svg" class="arrow_right">
+        <div class="ourCommunity">
+            <div class="layer_community">
+                <div class="user_card">
+                    <img src="assets/userpic.svg" alt="user picture" class="img_user">
+                    <h3>our community</h3>
+                    <p>A hacker is any skilled computer expert that uses their technical knowledge to overcome a problem, but it can also mean a security hacker in common language</p>
                 </div>
-                      <th>
-                          <img src="assets/Rectangle 2.png">
-                      </th>
-                      <th >
-                          <img src="assets/Rectangle 3.png">
-                      </th>
-                      <th>
-                          <img src="assets/Rectangle 1.png">
-                      </th>
-            </th>
-        </table>
+            <div class="slider_main">
+                <div class="slider_nav">
+                    <span class="nav_left">&#10094</span><span>&nbsp</span>
+                    <img src="assets/1.svg" alt="one">
+                    <img src="assets/divider-icon.svg" alt="divider-icon"><span>&nbsp</span>
+                    <img src="assets/5.svg" alt="five">
+                    <span class="nav_right">&#10095</span>
+                </div>
+                <div class="slider_items" >
+                    <img src="assets/Rectangle2.png" alt="item-1">
+                </div>
+                <div class="slider_items">
+                    <img src="assets/Rectangle3.png" alt="item-2">
+                </div>
+                <div class="slider_items">
+                    <img src="assets/Rectangle1.png" alt="item-3">
+                </div>
+            </div>
+        </div>
         <section class="implement">
-            <img src="assets/content-image-2.png" class="content_image_implement">
+            <img src="assets/content-image-2.png" class="content_image_implement" alt="conten image">
             <div class="content_block">
                 <p class="content_text_imp">Implement right Code</p>
                 <p class="content_text_imp_inf">These might be considered part of the <strong>programming process</strong>, but often the term software development is used for this larger process with the term programming, implementation</p>
                 <button type="button" class="button_learn_more_default">
-                    <p class="text_button_get_started">Learn more</p>
+                    <text class="text_button_get_started">Learn more</text>
                 </button>
             </div>
         </section>
         <section class="signUp">
             <form class="form_email">
                 <p class="text_email_imp">sign up for our newsletter</p>
-                <input type="email" class="email_text value_email_text" placeholder="E-mail">
+                <input type="email" class="email_text value_email_text" value="" placeholder="E-mail">
                 <button type="submit" class="button_submit">
-                    <img src="assets/check-icon.svg" class="email_icon_button">
+                    <img src="assets/check-icon.svg" class="email_icon_button" alt="icon">
                 </button>
             </form>
         </section>
@@ -98,7 +99,7 @@
                    <p class="apple_button_text">apple store</p>
                </div>
                <div class="apple_icon_button">
-                   <img src="assets/icon-apple.png" class="apple_icon_img">
+                   <img src="assets/icon-apple.png" class="apple_icon_img" alt="apple icon">
                </div>
             </div>
             <div class="play_market_button_defoult">
@@ -106,21 +107,22 @@
                     <p class="play_market_button_text">play market</p>
                 </div>
                 <div class="play_market_icon_button">
-                    <img src="assets/icon-android.svg" class="android_icon_img">
+                    <img src="assets/icon-android.svg" class="android_icon_img" alt="android icon">
                 </div>
             </div>
         </section>
         <footer class="footer_block">
             <nav class="nav_footer">
-                <a class="nav_footer_credits">Credits</a>
-                <img src="assets/mnu-items-divider.png" class="item_divider">
-                <a class="nav_footer_credits_privacy">Privacy</a>
-                <img src="assets/mnu-items-divider.png" class="item_divider_last">
-                <a class="nav_footer_our_teams">Our teams</a>
+                <a class="nav_footer_credits" href="#credits">Credits</a>
+                <img src="assets/mnu-items-divider.png" class="item_divider" alt="divider-icon">
+                <a class="nav_footer_credits_privacy" href="#privacy">Privacy</a>
+                <img src="assets/mnu-items-divider.png" class="item_divider_last" alt="divider-icon">
+                <a class="nav_footer_our_teams" href="#ourteams">Our teams</a>
             </nav>
-            <img src="assets/logo.svg" class="logo_footer">
+            <a href="index.html"><img src="assets/logo.svg" class="logo_footer" alt="logo"></a>
             <p class="copyright">by TonYem for RSS at 2020</p>
         </footer>
+        </div>
     </section>
 </body>
 </html>
