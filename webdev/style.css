@@ -1,9 +1,12 @@
+.body {
+    margin: 0px;
+}
 .webdev {
     position: relative;
     width: 1600px;
-    height: 4105px;
+    height: 4025px;
     background: #FFFFFF;
-    margin: auto;
+    margin:auto;
 }
 .header{
     width: 1600px;
@@ -45,12 +48,18 @@
     font-style: normal;
     font-weight: 500;
 }
+.logo:hover{
+    width: 49px;
+    height: 50px;
+}
 .navsyllabus {
     position: absolute;
     width: 53px;
     height: 20px;
     left: 123px;
     opacity: 0.8;
+    color: #FFFFFF;
+    text-decoration: none;
 }
 .navproject {
     position: absolute;
@@ -58,6 +67,8 @@
     height: 20px;
     left: 420px;
     opacity: 0.8;
+    color: #FFFFFF;
+    text-decoration: none;
 }
 .navfaq{
     position: absolute;
@@ -65,6 +76,8 @@
     height: 20px;
     left: 557px;
     opacity: 0.8;
+    color: #FFFFFF;
+    text-decoration: none;
 }
 .yourLife {
     position: absolute;
@@ -103,7 +116,7 @@
     left: calc(50% - 504px/2);
     top: calc(47% - 50px/2 - 22px);
 
-    font-family: Roboto;
+    font-family:'Roboto', sans-serif;
     font-style: normal;
     font-weight: normal;
     font-size: 18px;
@@ -155,6 +168,8 @@
 }
 .button_get_started_default:hover {
     background: #009CC2;
+    cursor: pointer;
+
 }
 .img{
     position: absolute;
@@ -285,6 +300,7 @@ background: url(pexels-thisisengineering-3862131.jpg), url(pexels-thisisengineer
 }
 .button_get_started_default_rappresent:hover {
     background: #009CC2;
+    cursor: pointer;
 }
 .ourCommunity {
     position: absolute;
@@ -295,52 +311,26 @@ background: url(pexels-thisisengineering-3862131.jpg), url(pexels-thisisengineer
 
     background: #F5F6F7;
 }
-
-.ourCommunity_left {
-    width: 706px;
+.layer_community {
     height: 504px;
+    background-color: #f5f6f7;
 }
- .img_user {
-    position: absolute;
-    width: 45px;
-    height: 45px;
-    left: 396px;
-    top: 155px;
- }
- .p_text_ourcommunity{
-    position: absolute;
-    width: 210px;
-    height: 20px;
-    left: 338px;
-    top: 205px;
-
-    /* h3-16-upper-bold */
-
-    font-family: 'Roboto', sans-serif;
-    font-style: normal;
+.user_card {
+    float: left;
+    margin-left: 269px;
+    margin-top: 155px;
+    width: 298px;
+}
+.user_card h3 {
     font-weight: 500;
     font-size: 16px;
     line-height: 20px;
-    /* identical to box height, or 125% */
-
-    display: flex;
-    align-items: center;
-    text-align: center;
+    font-family:'Roboto', sans-serif;
     letter-spacing: 2.4px;
     text-transform: uppercase;
-
-    color: #373737;
-
- }
- .p_user_card {
-    position: absolute;
-    width: 298px;
-    height: 80px;
-    left: 269px;
-    top: 235px;
-
-    /* body-14-reg */
-
+    margin-left: 68px;
+}
+.user_card p {
     font-family: 'Roboto', sans-serif;
     font-style: normal;
     font-weight: normal;
@@ -354,56 +344,37 @@ background: url(pexels-thisisengineering-3862131.jpg), url(pexels-thisisengineer
 
     color: #4E4E4E;
 }
-.ourCommunity_right {
-    width: -894px;
-    height: 504px;
+ .img_user {
+     margin-left: 125px;
+ }
+.slider_main {
+    float: right;
+    margin-top: 120px;
+    /*width: -894px;*/
+    display: inline-flex;
+    overflow: hidden;
 }
-.slider_navigation {
-    position: absolute;
+.slider_nav {
     width: 83px;
-    height: 18px;
-    right: 269px;
-    top: 82px;
-}
-.arrow_left {
+    line-height: 18px;
     position: absolute;
-    width: 9px;
-    height: 14px;
-    left: 0px;
-    top: 2px;
+    margin-top: -38px;
+    font-size: 18px;
+    margin-left: 570px;
 }
-.first {
-    position: absolute;
-    width: 9px;
-    height: 14px;
-    left: calc(50% - 9px/2 - 13px);
-    top: calc(50% - 14px/2);
+.slider_items {
+    display: inline;
+    margin-left: 30px;
 }
-.divider_icon {
-    position: absolute;
-    width: 7px;
-    height: 14px;
-    left: 39px;
-    top: 2px;
+.nav_left {
+ float: left;
 }
-.five {
-    position: absolute;
-    width: 9px;
-    height: 14px;
-    left: calc(50% - 9px/2 + 13px);
-    top: calc(50% - 14px/2);
+.nav_right {
+ float: right;
 }
-.arrow_right {
-    position: absolute;
-    width: 9px;
-    height: 14px;
-    left: 74px;
-    top: 2px;
-}
-.arrow_left:hover {
-    opacity: 0.5;
-}
-.arrow_right:hover {
+.nav_left:hover, .nav_right:hover {
+    cursor: pointer;
+    /*color: #009cc2;*/
     opacity: 0.5;
 }
 .implement {
@@ -411,7 +382,7 @@ background: url(pexels-thisisengineering-3862131.jpg), url(pexels-thisisengineer
     width: 1600px;
     height: 842px;
     left: 0px;
-    top: 2090px;
+    top: 504px;
 }
 .content_image_implement {
     position: absolute;
@@ -460,7 +431,7 @@ background: url(pexels-thisisengineering-3862131.jpg), url(pexels-thisisengineer
 
     /* body-14-reg */
 
-    font-family: Roboto;
+    font-family: 'Roboto', sans-serif;
     font-style: normal;
     font-weight: normal;
     font-size: 14px;
@@ -487,14 +458,16 @@ background: url(pexels-thisisengineering-3862131.jpg), url(pexels-thisisengineer
 }
 .button_learn_more_default:hover {
     background: #009CC2;
+    cursor: pointer;
 }
 .signUp {
     position: absolute;
     width: 1600px;
     height: 524px;
     left: 0px;
-    top: 2932px;
-    background: url(assets/pexels-christina-morillo-11816751.png);
+    top: 1346px;
+    background: url("assets/pexels-christina-morillo-11816751.png");
+
 }
 .form_email {
     position: absolute;
@@ -528,7 +501,7 @@ background: url(pexels-thisisengineering-3862131.jpg), url(pexels-thisisengineer
 }
 .email_text {
     position: absolute;
-    width: 340px;
+    width: 316px;
     height: 46px;
     left: 0px;
     top: 58px;
@@ -546,6 +519,7 @@ background: url(pexels-thisisengineering-3862131.jpg), url(pexels-thisisengineer
     font-weight: normal;
     font-size: 14px;
     line-height: 140%;
+    padding-left: 24px;
     /* identical to box height, or 20px */
 
     color: #373737;
@@ -571,13 +545,14 @@ background: url(pexels-thisisengineering-3862131.jpg), url(pexels-thisisengineer
 }
 .button_submit:hover {
     background: #009CC2;
+    cursor: pointer;
 }
 .download {
     position: absolute;
     width: 1600px;
     height: 464px;
     left: 0px;
-    top: 3456px;
+    top: 1871px;
     background: #F5F6F7;
 }
 .text_download_imp {
@@ -612,7 +587,7 @@ background: url(pexels-thisisengineering-3862131.jpg), url(pexels-thisisengineer
 
     /* body-14-reg */
 
-    font-family: 'Roboto';
+    font-family: 'Roboto', sans-serif;
     font-style: normal;
     font-weight: normal;
     font-size: 14px;
@@ -677,6 +652,7 @@ background: url(pexels-thisisengineering-3862131.jpg), url(pexels-thisisengineer
 }
 .apple_button:hover{
     background: #009CC2;
+    cursor: pointer;
 }
 .apple_icon_button {
     position: absolute;
@@ -703,8 +679,8 @@ background: url(pexels-thisisengineering-3862131.jpg), url(pexels-thisisengineer
     top: calc(50% - 20px/2);
 }
 .apple_icon_img:hover {
-    width: 22px;
-    height: 25px;
+    width: 14px;
+    height: 17px;
     cursor: pointer;
 }
 .play_market_button_defoult {
@@ -761,6 +737,7 @@ background: url(pexels-thisisengineering-3862131.jpg), url(pexels-thisisengineer
 }
 .play_market_button:hover {
     background: #009CC2;
+    cursor: pointer;
 }
 .play_market_icon_button {
     position: static;
@@ -787,8 +764,8 @@ background: url(pexels-thisisengineering-3862131.jpg), url(pexels-thisisengineer
     top: calc(50% - 23px/2 + 0.5px);
 }
 .android_icon_img:hover {
-    width: 25px;
-    height: 28px;
+    width: 17px;
+    height: 20px;
     cursor: pointer;
 }
 .footer_block {
@@ -796,7 +773,7 @@ background: url(pexels-thisisengineering-3862131.jpg), url(pexels-thisisengineer
     width: 1600px;
     height: 185px;
     left: 0px;
-    top: 3920px;
+    top: 2334px;
 
     background: #000000;
 }
@@ -819,6 +796,7 @@ background: url(pexels-thisisengineering-3862131.jpg), url(pexels-thisisengineer
     font-style: normal;
     font-weight: normal;
     font-size: 14px;
+    text-decoration: none;
     line-height: 140%;
     /* identical to box height, or 20px */
 
@@ -848,6 +826,7 @@ background: url(pexels-thisisengineering-3862131.jpg), url(pexels-thisisengineer
     font-weight: normal;
     font-size: 14px;
     line-height: 140%;
+    text-decoration: none;
     /* identical to box height, or 20px */
 
     color: #FFFFFF;
@@ -878,6 +857,7 @@ background: url(pexels-thisisengineering-3862131.jpg), url(pexels-thisisengineer
     line-height: 140%;
     /* identical to box height, or 20px */
     color: #FFFFFF;
+    text-decoration: none;
 }
 .nav_footer a:hover {
     text-decoration: underline;
@@ -888,6 +868,10 @@ background: url(pexels-thisisengineering-3862131.jpg), url(pexels-thisisengineer
     height: 45px;
     left: 778px;
     top: 60px;
+}
+.logo_footer:hover {
+    width: 49px;
+    height: 50px;
 }
 .copyright {
     position: absolute;
