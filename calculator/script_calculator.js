@@ -10,6 +10,7 @@ class Calculator {
       this.currentOperand = '';
       this.previousOperand = '';
       this.operation = undefined;
+      this.readyToReset = false;
     }
 
     delete() {
@@ -73,7 +74,11 @@ class Calculator {
       if(number === '-') {
         return number
       }else if (isNaN(integerDigits)) {
-        integerDisplay = ''
+        if(isNaN(number)){
+          integerDisplay = 'error'
+        } else {
+          integerDisplay = ''
+        }
       } else {
         integerDisplay = integerDigits.toLocaleString('en', { maximumFractionDigits: 0 })
       }
@@ -83,7 +88,6 @@ class Calculator {
         return integerDisplay
       }
     }
-
     updateDisplay() {
       this.currentOperandTextElement.innerText =
         this.getDisplayNumber(this.currentOperand)
@@ -110,8 +114,8 @@ class Calculator {
   numberButtons.forEach(button => {
     button.addEventListener("click", () => {
         if(calculator.previousOperand === "" &&
-        calculator.currentOperand !== "" &&
-    calculator.readyToReset) {
+              calculator.currentOperand !== "" &&
+              calculator.readyToReset) {
             calculator.currentOperand = "";
             calculator.readyToReset = false;
         }
@@ -124,6 +128,7 @@ class Calculator {
     button.addEventListener('click', () => {
       if(button.innerText === '-' && calculator.currentOperand === '') {
         calculator.appendNumber('-');
+        calculator.readyToReset = false;
       }else {
       calculator.chooseOperation(button.innerText);
       }
