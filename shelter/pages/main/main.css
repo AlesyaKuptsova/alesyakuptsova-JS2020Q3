@@ -1,0 +1,76 @@
+.body {
+    margin: 0;
+    width: 1920px;
+}
+.not_only {
+    margin: auto;
+    background: url(../../assets/fonts/start-screen-background.jpg);
+    height: 908px;
+    max-width: 1200px;
+}
+.wrapper {
+    max-width: 1200px;
+    display: flex;
+    margin: 0 auto;
+    justify-content: space-between;
+}
+.header {
+    width: 100vw;
+
+}
+.menu {
+    width: 443px;
+    display: flex;
+}
+.logo {
+    display: flex;
+    flex-direction: column;
+}
+.logo_title {
+    position: flex;
+    width: 184px;
+    height: 35px;
+    left: 0px;
+    top: 0px;
+    /* logo_title */
+    font-family: Georgia;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 32px;
+    line-height: 110%;
+    /* or 35px */
+    display: flex;
+    align-items: center;
+    letter-spacing: 6%;
+    /* color-primary */
+    color: #F1CDB3;
+}
+.logo_subtitle {
+    color: #FFFFFF;
+    font-size: 13px;
+    letter-spacing: 10%;
+    line-height: 110%;
+}
+.list {
+    display: flex;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    justify-content: space-between;
+}
+.list_item {
+    display: flex;
+    align-items: center;
+}
+.list_link {
+    color: #FFFFFF;
+    font-family: Arial;
+    font-size: 15px;
+    line-height: 160%;
+}
+.list_link_disabled {
+    color: #CDCDCD;
+    text-decoration: none;;
+
+}
