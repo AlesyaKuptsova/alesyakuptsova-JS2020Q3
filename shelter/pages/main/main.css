@@ -83,10 +83,12 @@
 }
 .list_link:hover {
     border-bottom: solid 3px #F1CDB3;
+    color: #FAFAFA;
 
 }
 .list_link_active {
     border-bottom: solid 3px #F1CDB3;
+    color: #FAFAFA;
 }
 .start_screen_content {
     display: flex;
@@ -349,4 +351,205 @@
 }
 .button_get_to:hover {
     background: #FDDCC4;
+}
+.help {
+    height: 611px;
+    width: 1280px;
+    border: 0;
+    margin: auto;
+    background: #FFFFFF;
+}
+.help_block {
+    display: grid;
+    grid-column-gap: auto;
+    width: 1280px;
+}
+.help_block_column_1 {
+    display: grid;
+    justify-content: space-between;
+    grid-template-columns: auto auto auto  auto auto;
+    height: 140px;
+    margin: 11px 87px 30px;
+}
+.help_block_column_2 {
+    display: grid;
+    justify-content: space-around;
+    grid-template-columns: auto auto auto auto;
+    height: 140px;
+    margin: 0 110px;
+}
+.list_help {
+    display: grid;
+    grid-template-columns: auto;
+    height: 113px;
+    place-items: center stretch;
+    align-items: center;
+    text-align: center;
+}
+.h3_help {
+    font-family: Georgia;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 35px;
+    line-height: 130%;
+    align-items: center;
+    text-align: center;
+    letter-spacing: 0.06em;
+    color: #545454;
+    margin: 80px 0 50px 0;
+}
+.h4_help {
+    font-family: Georgia;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 115%;
+    /* identical to box height, or 23px */
+    letter-spacing: 0.06em;
+    /* color-dark-l */
+    color: #545454;
+    border: 0;
+    margin-block-start: 1.34em;
+    margin-block-end: 1.34em;
+}
+.inaddition {
+    height: 464px;
+    width: 1280px;
+    margin: auto;
+    /* color-light-l */
+    background: #F6F6F6;
+}
+.inaddition_block {
+    display: flex;
+    width: 1200px;
+    align-items: center;
+    margin: 60px 142px;
+}
+.inaddition_information {
+    margin: 0 0 10px 30px;
+    width: 380px;
+    height: 282px;
+}
+.h3_inaddition {
+    width: 300px;
+    height: 90px;
+    font-family: Georgia;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 35px;
+    line-height: 130%;
+    display: flex;
+    align-items: center;
+    letter-spacing: 0.06em;
+    color: #545454;
+    margin: 20px 0;
+}
+.h5_inaddition {
+    width: 307px;
+    height: 17px;
+    font-family: Georgia;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 15px;
+    line-height: 110%;
+    display: flex;
+    align-items: center;
+    letter-spacing: 0.058em;
+    color: #545454;
+    margin: 0 0 20px 0;
+}
+.credit_card {
+    display: flex;
+    align-items: flex-start;
+    padding: 10px 0px 0px 15px;
+    width: 335px;
+    /* color-primary */
+    background: #F1CDB3;
+    border-radius: 9px;
+    padding: 10px 0 0 15px;
+    margin: 0 0 20px 0;
+}
+.h4_inaddition {
+    width: 274px;
+    font-family: Georgia;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 115%;
+    display: flex;
+    align-items: center;
+    letter-spacing: 0.058em;
+    color: #545454;
+    margin: 0;
+    padding: 0 0 10px 15px;
+    text-decoration: none;
+}
+.text_inaddition {
+    width: 380px;
+    height: 72px;
+    font-family: Arial;
+    font-style: italic;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 18px;
+    display: flex;
+    align-items: center;
+    color: #B2B2B2;
+}
+.footer {
+    width: 1280px;
+    height: 350px;
+    margin: auto;
+
+    background: url(../../assets/fonts/footer-background.png), radial-gradient(110.67% 538.64% at 5.73% 50%, #513D2F 0%, #1A1A1C 100%), #211F20;
+}
+.footer_block {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 1200px;
+    height: 310px;
+    margin: 40px 0 0 0;
+}
+.contacts {
+    margin-bottom: 70px;
+}
+.location {
+    margin-bottom: 70px;
+}
+.item_row {
+    display: flex;
+    align-items: center;
+}
+.h3_footer {
+    width: 275px;
+    /* h3 */
+    font-family: Georgia;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 35px;
+    line-height: 130%;
+    /* or 45px */
+    letter-spacing: 0.05em;
+    /* color-light-xl */
+    color: #FFFFFF;
+    margin: 40px 0 30px 0;
+}
+.h4_footer {
+    width: 260px;
+    height: 23px;
+    left: calc(50% - 191px/2 - 444.5px);
+    top: 151px;
+    font-family: Georgia;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 115%;
+    letter-spacing: 0.05em;
+    /* color-primary */
+    color: #F1CDB3;
+    margin-left: 20px;
+}
+.a {
+    text-decoration: none;
 }
