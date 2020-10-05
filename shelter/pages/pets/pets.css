@@ -218,21 +218,6 @@
     height: 52px;
     background: #F6F6F6;
     margin-right: 18px;
-
-}
-.button_paginator_active {
-    border: 2px solid #CDCDCD;
-    box-sizing: border-box;
-    border-radius: 100px;
-    width: 52px;
-    height: 52px;
-    background: #F6F6F6;
-    margin-right: 18px;
-}
-.button_paginator_active:hover {
-    background: #FDDCC4;
-    border: 0;
-    color: black;
 }
 .button_paginator {
     border: 2px solid #F1CDB3;
