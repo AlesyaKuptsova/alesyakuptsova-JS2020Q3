@@ -108,6 +108,9 @@
     height: 1462px;
     flex-direction: column;
 }
+.slider_cards_768 {
+    display: none;
+}
 .slider_cards {
     display: flex;
     width: 1200px;
@@ -240,6 +243,15 @@
 .button_paginator:hover {
     background:#FDDCC4;
 }
+.footer_768{
+    display: none;
+}
+.footer_img {
+    display: none;
+}
+.footer_rows {
+    display: none;
+}
 .footer {
     width: 1280px;
     height: 350px;
@@ -296,4 +308,91 @@
 }
 .a {
     text-decoration: none;
+}
+@media only screen and (max-width: 768px) {
+    .header {
+        width: 768px;
+        height: 120px;
+        left: 0;
+        transform: none;
+    }
+    .ourfriends {
+        height: 1853px;
+        width: 768px;
+    }
+    .our_friends_block {
+        width: 768px;
+    }
+    .logo {
+        margin-left: 30px;
+    }
+    .menu {
+        margin-right: 30px;
+    }
+    .our_heding_header {
+        margin: 0 0 0 184px;
+    }
+    .slider_cards_768 {
+        width: 580px;
+        height: 1365px;
+        display: grid;
+        grid-template-columns: auto auto;
+        margin: 0 auto;
+    }
+    .slider_cards {
+        display: none;
+    }
+    .card {
+        margin-right: 40px;
+        margin-left: auto;
+    }
+    .position_button {
+        width: 340px;
+        height: 52px;
+        margin: 70px auto;
+    }
+    .button_paginator {
+        margin-right: 12.5px;
+    }
+    .button_paginator_inactive {
+        margin-right: 12.5px;
+    }
+    .footer {
+        height: 639px;
+        width: 768px;
+        background: url(../../assets/fonts/footer-gradient-background.png), radial-gradient(110.67% 538.64% at 5.73% 50%, #513D2F 0%, #1A1A1C 100%), #211F20;
+    }
+    .footer_block {
+        display: none;
+    }
+    .footer_rows {
+        display: grid;
+        grid-template-rows: auto auto;
+    }
+    .footer_768 {
+        width: 708px;
+        height: 234px;
+        display: grid;
+        grid-template-columns: auto auto;
+        margin-right: 64px;
+    }
+    .footer_img {
+        display: grid;
+        grid-template-columns: auto;
+        margin-top: 95px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .contacts {
+        width: 278px;
+        height: 234px;
+    }
+    .h3_footer {
+        margin-bottom: 10px;
+    }
+    .contacts {
+        margin-left: 60px;
+    }
+ma
+
 }
