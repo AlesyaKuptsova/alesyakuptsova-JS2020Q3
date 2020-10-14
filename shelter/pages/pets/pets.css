@@ -1,13 +1,15 @@
 .body {
     margin: 0;
 }
+* {
+    transition: all .3s;
+}
 .wrapper {
     max-width: 1200px;
     display: flex;
     margin: auto;
     justify-content: space-between;
     padding: 0;
-
 }
 .header {
     width: 1280px;
@@ -309,6 +311,12 @@
 .a {
     text-decoration: none;
 }
+.m {
+    display: none;
+}
+.slider320 {
+    display: none;
+}
 @media only screen and (max-width: 768px) {
     .header {
         width: 768px;
@@ -347,7 +355,7 @@
         margin-left: auto;
     }
     .position_button {
-        width: 340px;
+        width: 343px;
         height: 52px;
         margin: 70px auto;
     }
@@ -368,6 +376,7 @@
     .footer_rows {
         display: grid;
         grid-template-rows: auto auto;
+        width: 768px;
     }
     .footer_768 {
         width: 708px;
@@ -393,6 +402,156 @@
     .contacts {
         margin-left: 60px;
     }
-ma
+    .m {
+        display: none;
+    }
+    .slider320 {
+        display: none;
+    }
+}
+@media only screen and (max-width: 320px) {
+    .header {
+        width: 320px;
+        height: 120px;
+        left: 0;
+        transform: none;
+    }
+    .menu {
+        display: none;
+    }
+    .dropdown {
+        position: relative;
+    }
+    .dropdown-content a {
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+    }
+    .dropdown a:hover {
+        background-color: #ddd;
+    }
+    .dropdown-content {
+        display: none;
+        position: inherit;
+        background-color: #FFFFFF;
+        width: 100px;
+        overflow: auto;
+        z-index: 1;
+    }
+    .show {
+        display: block;
+    }
+    .container {
+      display: inline-block;
+      cursor: pointer;
+      margin-right: 50px;
+      margin-top: 45px;
+    }
+    .bar1, .bar2, .bar3 {
+      width: 30px;
+      border: 1px solid #000000;
+      margin: 6px 0;
+      transition: 0.4s;
+    }
+    .change .bar1 {
+      -webkit-transform: rotate(-45deg) translate(-9px, 6px);
+      transform: rotate(-45deg) translate(-5px, 6px);
+    }
+    .change .bar2 {opacity: 0;}
+    .change .bar3 {
+      -webkit-transform: rotate(45deg) translate(-8px, -8px);
+      transform: rotate(45deg) translate(-5px, -8px);
+    }
+    .logo {
+        margin-left: 10px;
+    }
+    .ourfriends {
+        width: 320px;
+        height: 1769px;
+    }
+    .our_friends_block {
+        width: 320px;
+    }
+    .our_heding_header {
+        width: 290px;
+        height: 64px;
+        font-size: 25px;
+        margin: auto auto 42px auto;
+    }
+    .slider_cards_768 {
+        display: none;
+    }
+    .slider_cards {
+        display: none;
+    }
+    .slider320 {
+        display: block;
+    }
+    .card {
+        margin: auto auto 30px auto;
+    }
+    .position_button {
+        width: 300px;
+        margin-top: 12px;
+    }
+    .button_paginator_inactive {
+        margin-right: 4px;
+    }
+    .button_paginator {
+        margin-right: 4px;
+    }
+    .footer {
+        height: 809px;
+        width: 320px;
+        background: url(../../assets/fonts/footer-gradient-background320.png), radial-gradient(110.67% 538.64% at 5.73% 50%, #513D2F 0%, #1A1A1C 100%), #211F20;
+    }
+    .footer_block {
+        display: grid;
+        grid-template-rows: auto auto auto;
+    }
+    .contacts {
+        width: 278px;
+        height: 208px;
+        margin: 0 0 0 30px;
+    }
+    .location {
+        width: 300px;
+        height: 222px;
+        margin: 20px 0 50px 10px;
+    }
+    #dog_footer {
+        width: 260px;
+        height: 269px;
+        margin: auto;
+    }
+    .h3_footer {
+        width: 278px;
+        height: 64px;
+        left: calc(50% - 278px/2);
+        font-family: Georgia;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 25px;
+        line-height: 130%;
+        text-align: center;
+        letter-spacing: 0.06em;
+        color: #FFFFFF;
+        margin-top: 0;
+    }
+    .item_row {
+        display: flex;
+        align-items: center;
+    }
+    #footer_text {
+        width: 250px;
+        height: 64px;
+    }
+    .footer_img {
+        display: none;
+    }
+    .footer_rows {
+        display: none;
+    }
 
 }

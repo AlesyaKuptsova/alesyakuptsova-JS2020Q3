@@ -2,7 +2,7 @@
     margin: 0;
 }
 * {
-    transition: all .2s;
+    transition: all .3s;
 }
 .not_only {
     margin: auto;
@@ -356,6 +356,9 @@
     background: #FFFFFF;
 
 }
+.card_end:hover {
+    background: #FFFFFF;
+}
 .button_arrow:hover {
     background: #FDDCC4;
     border-radius: 100px;
@@ -585,7 +588,16 @@
 .help_block_row_one {
     display: none;
 }
+#button_arrow {
+    display: none;
+}
+#button_arrow_r {
+    display: none;
+}
 @media only screen and (max-width: 768px) {
+    .body {
+        overflow-x: scroll;
+    }
     .not_only {
         height: 1165px;
         width: 768px;
@@ -700,12 +712,19 @@
     .inaddition_block {
         height: 783px;
         width: 768px;
-        display: flexbox;
+        display: flex;
         flex-direction: column;
+        margin: 0;
     }
     .inaddition_information {
         order: -1;
         margin: 0 0 60px 30px;
+    }
+    .dog {
+        margin-top: 60px;
+    }
+    .h3_inaddition {
+        margin-top: 80px;
     }
     .footer {
         height: 639px;
@@ -718,6 +737,7 @@
     .footer_rows {
         display: grid;
         grid-template-rows: auto auto;
+        width: 768px;
     }
     .footer_768 {
         width: 708px;
@@ -746,6 +766,12 @@
     #dog {
         margin-top: 30px;
     }
+    #button_arrow {
+        display: none;
+    }
+    #button_arrow_r {
+        display: none;
+    }
 }
 @media only screen and (max-width: 320px) {
     .not_only {
@@ -764,7 +790,6 @@
     }
     .dropdown {
         position: relative;
-        display: flex;
     }
     .dropdown-content a {
         color: black;
@@ -781,9 +806,7 @@
         background-color: #f1f1f1;
         width: 100px;
         overflow: auto;
-        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
         z-index: 1;
-        left: -53px;
     }
     .show {
         display: block;
@@ -817,6 +840,7 @@
     .start_screen_content {
         display: flex;
         flex-direction: column;
+        width: 320px;
     }
     .start_content {
         width: 300px;
@@ -874,7 +898,7 @@
         flex-direction: column;
     }
     .about {
-        width: 300px;
+        width: 320px;
         height: 974px;
         left: calc(50% - 300px/2);
     }
@@ -927,7 +951,7 @@
     .our_friends_block {
         display: flex;
         height: 749px;
-        width: 300px;
+        width: 320px;
 
     }
     .slider_cards {
@@ -937,15 +961,13 @@
         margin: 0 25px;
     }
     .our_heding_header {
-        margin: auto auto 0 auto;
+        margin: 0;
     }
     .button_slider {
         display: none;
     }
-    .row {
-        display: grid;
-        order: 2;
-        margin: 300px 297px 0 -220px;
+    .button_arrow {
+        display: none;
     }
     .our_heding_header {
         width: 320px;
@@ -954,9 +976,32 @@
         justify-content: center;
         margin-top: 40px;
     }
+    .button320 {
+        display: flex;
+        flex-direction: row;
+        margin: -10px auto 0;
+
+    }
+    #button_arrow {
+        display: flex;
+        margin-right: 80px;
+        margin-left: 20px;
+
+    }
+    #button_arrow_r {
+        display: flex;
+    }
+    #button_arrow:hover {
+        background: #FDDCC4;
+        border-radius: 100px;
+    }
+    #button_arrow_r:hover {
+        background: #FDDCC4;
+        border-radius: 100px;
+    }
     .button_get_to {
         margin-left: 20px;
-        margin-top: 70px;
+        margin-top: 60px;
     }
     .help {
         height: 745px;
@@ -1032,7 +1077,8 @@
     }
     .inaddition_information {
         order: -1;
-        margin: 20px 0 40px 85px;
+        width: 280px;
+        margin: 20px 0 40px;
     }
     .h3_inaddition {
         font-size: 25px;
@@ -1047,6 +1093,8 @@
         font-family: Arial;
         font-style: normal;
         font-weight: normal;
+        width: 274px;
+        height: 24px;
     }
     .h4_inaddition {
         font-size: 15px;
@@ -1069,7 +1117,7 @@
         text-align: justify;
         color: #B2B2B2;
     }
-    #dog {
+    .dog {
         width: 260px;
         height: 135px;
         margin-top: 20px;
@@ -1125,5 +1173,11 @@
     }
     .footer_img {
         display: none;
+    }
+    .footer_rows {
+        display: none;
+    }
+    .body {
+        overflow-x: scroll;
     }
 }

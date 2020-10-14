@@ -14,10 +14,23 @@
         <h1 class="logo_title">Cozy House</h1>
         <div class="logo_subtitle">Shelter for pets in Boston</div>
         </div>
+        <div class="dropdown">
+            <div onclick="myFunction()" class="container" id="check">
+              <div class="bar1"></div>
+              <div class="bar2"></div>
+              <div class="bar3"></div>
+            </div>
+            <div id="myDropdown" class="dropdown-content">
+                <a class="list_link list_link_disabled list_link_active m" href="../main/main.html">About the shelter</a>
+                <a class="list_link list_link_disabled m" href="#ourpets">Our pets</a>
+                <a class="list_link list_link_disabled m" href="#help">Help the shelter</a>
+                <a class="list_link list_link_disabled m" href="#contacts">Contacts</a>
+            </div>
+        </div>
             <nav class="menu">
                 <ul class="list">
                     <li class="list_item">
-                        <a class="list_link list_link_disabled list_link_active" href="#main.html">About the shelter</a>
+                        <a class="list_link list_link_disabled list_link_active" href="../main/main.html">About the shelter</a>
                     </li>
                     <li class="list_item">
                         <a class="list_link list_link_disabled" href="#ourpets">Our pets</a>
@@ -36,6 +49,23 @@
         <div class="wrapper">
             <div class="our_friends_block">
                 <h3 class="our_heding_header">Our friends who <br/>are looking for a house</h3>
+                <div class="slider320">
+                    <div class="card" id="Katrine">
+                        <img src="../../assets/images/pets-katrine.png" alt="cat">
+                        <text class="text_card">Katrine</text>
+                        <div class="button_card">Learn more</div>
+                    </div>
+                    <div class="card" id="Jennifer">
+                        <img src="../../assets/images/pets-jennifer.png" alt="dog">
+                        <text class="text_card">Jennifer</text>
+                        <div class="button_card">Learn more</div>
+                    </div>
+                    <div class="card" id="Woody">
+                        <img src="../../assets/images/pets-woody.png" alt="dog">
+                        <text class="text_card">Woody</text>
+                        <div class="button_card">Learn more</div>
+                    </div>
+                </div>
                 <div class="slider_cards_768">
                     <div class="card">
                         <img src="../../assets/images/pets-katrine.png" alt="cat">
@@ -126,7 +156,7 @@
         <div class="wrapper">
             <div class="footer_block">
                 <div class="contacts">
-                    <h3 class="h3_footer">For questions and suggestions</h3>
+                    <h3 class="h3_footer" id="footer_text">For questions and suggestions</h3>
                     <a href="mailto:email@shelter.com" class="a item_row">
                         <img src="../../assets/icons/icon-email.svg" alt="email">
                         <h4 class="h4_footer">email@shelter.com</h4>
@@ -147,7 +177,7 @@
                         <h4 class="h4_footer">18 South Park, London </h4>
                     </a>
                 </div>
-                <img src="../../assets/images/footer-puppy.png" alt="dog">
+                <img src="../../assets/images/footer-puppy.png" alt="dog" id="dog_footer">
             </div>
             <div class="footer_rows">
                 <div class="footer_768">
