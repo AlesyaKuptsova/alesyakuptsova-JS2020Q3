@@ -15,7 +15,7 @@
             <h1 class="logo_title">Cozy House</h1>
             <div class="logo_subtitle">Shelter for pets in Boston</div>
             </div>
-            <div class="dropdown">
+         <!--   <div class="dropdown">
                 <div onclick="myFunction()" class="container" id="check">
                   <div class="bar1"></div>
                   <div class="bar2"></div>
@@ -27,7 +27,27 @@
                     <a class="list_link list_link_disabled m" href="#help">Help the shelter</a>
                     <a class="list_link list_link_disabled m" href="#contacts">Contacts</a>
                 </div>
+            </div> -->
+            <!-- input нужен для того, что бы в дальнейшем задать стили иконке ☰ по событию checked, то есть когда меню будем открыать и закрыать -->
+            <input type="checkbox" id="hmt" class="hidden-menu-ticker">
+            <!-- Далее вёрстка самой иконки. Разделена на спаны, что бы красиво превращать в крестик при открытии (почти как в Телеграме :) -->
+            <label class="btn-menu" for="hmt">
+            <span class="first" id="first"></span>
+            <span class="second" id="second"></span>
+            <span class="third" id="third"></span>
+            </label>
+            <!-- Менюшка раскрывающаяся и скрывающаяся -->
+            <ul class="hidden-menu" id="menu">
+            <div class="logo" style="margin-top: 30px;">
+            <h1 class="logo_title">Cozy House</h1>
+            <div class="logo_subtitle">Shelter for pets in Boston</div>
             </div>
+            <li><a class="list_link list_link_disabled list_link_active" href="main.html">About the shelter</a></li>
+            <li><a class="list_link list_link_disabled" href="../pets/pets.html">Our pets</a></li>
+            <li><a class="list_link list_link_disabled" href="#help">Help the shelter</a></li>
+            <li><a class="list_link list_link_disabled" href="#contacts">Contacts</a></li>
+            </ul>
+            <div class="backdrop" id="backdrop"></div>
             <nav class="menu">
                 <ul class="list">
                     <li class="list_item">
@@ -54,7 +74,7 @@
                             Not only people need a house
                         </h2>
                         <p class="p_main">We offer to give a chance to a little and nice puppy with an extremely wide and open heart. He or she will love you more than anybody else in the world, you will see!</p>
-                        <button type="button" class="button">
+                        <button type="button" class="button" onclick="document.location ='../pets/pets.html'">
                             <p class="p_button">Make a friend</p>
                         </button>
                     </div>
@@ -108,7 +128,7 @@
                         <img src="../../assets/icons/button_arrow.png" alt="button arrow" id="button_arrow">
                         <img src="../../assets/icons/button_arrow_r.png" alt="button arrow" id="button_arrow_r">
                 </div>
-                <button class="button_get_to">
+                <button class="button_get_to" onclick="document.location ='../pets/pets.html'">
                     Get to know the rest
                 </button>
             </div>

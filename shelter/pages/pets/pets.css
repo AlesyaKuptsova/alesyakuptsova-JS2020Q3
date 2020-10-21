@@ -317,11 +317,12 @@
 .slider320 {
     display: none;
 }
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 1279px) {
     .header {
         width: 768px;
         height: 120px;
         left: 0;
+        right: 0;
         transform: none;
     }
     .ourfriends {
@@ -409,11 +410,12 @@
         display: none;
     }
 }
-@media only screen and (max-width: 320px) {
+@media only screen and (max-width: 767px) {
     .header {
         width: 320px;
         height: 120px;
         left: 0;
+        right: 0;
         transform: none;
     }
     .menu {

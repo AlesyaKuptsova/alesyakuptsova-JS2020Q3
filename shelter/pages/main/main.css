@@ -594,13 +594,20 @@
 #button_arrow_r {
     display: none;
 }
-@media only screen and (max-width: 768px) {
+.hidden-menu {
+    display: none;
+}
+#hmt {
+    display: none;
+}
+@media only screen and (max-width: 1279px) {
     .body {
         overflow-x: scroll;
     }
     .not_only {
         height: 1165px;
         width: 768px;
+        margin: auto;
         background: url(../../assets/fonts/start-screen-gradient-background.png), radial-gradient(100% 215.42% at 0% 0%, #5B483A 0%, #262425 100%), #211F20;
     }
     .header {
@@ -627,6 +634,7 @@
         display: flex;
         flex-direction: column;
         width: 768px;
+        align-items: center;
     }
     .start_content {
         width: 460px;
@@ -772,8 +780,11 @@
     #button_arrow_r {
         display: none;
     }
+    .hidden-menu {
+        display: none;
+    }
 }
-@media only screen and (max-width: 320px) {
+@media only screen and (max-width: 767px) {
     .not_only {
         height: 823px;
         width: 320px;
@@ -788,7 +799,115 @@
     .menu {
         display: none;
     }
-    .dropdown {
+/*стилизуем менюшку*/
+    .hidden-menu {
+        display: block;
+        position: fixed;
+        list-style:none;
+        padding: 10px;
+        margin: 0;
+        box-sizing: border-box;
+        width: 320px;
+        background:  #292929;
+        height: 100%;
+        top: 0;
+        right: -320px;
+        transition: left .2s;
+        z-index: 2;
+        -webkit-transform: translateZ(0);
+        -webkit-backface-visibility: hidden;
+    }
+  /*скрываем инпут чекбокс*/
+    .hidden-menu-ticker {
+        display: none;
+    }
+  /*общие стили значка-гамбургера, самого лэйбла*/
+    .btn-menu {
+        color: #F1CDB3;
+        padding: 2px;
+        margin-right: 53px;
+        top: 5px;
+        left: 5px;
+        cursor: pointer;
+        transition: left .1s;
+        z-index: 3;
+        width: 30px;
+        height: 30px;
+        -webkit-transform: translateZ(0);
+        -webkit-backface-visibility: hidden;
+        position: relative;
+    }
+  /*общие стили полосок*/
+    .btn-menu span {
+        display: block;
+        height: 2px;
+        background-color:#F1CDB3;;
+        margin: 5px 0 0;
+        transition: all .1s linear .1s;
+        position: relative;
+    }
+  /*прибиваем к верху лэйбла первую полоску*/
+    .btn-menu span.first {
+        margin-top: 0;
+    }
+  /*при нажатии на бургер двигаем его и делаем другой фон бургеру*/
+    .hidden-menu-ticker:checked ~ .btn-menu {
+        position: absolute;
+        left: auto;
+        right: 0;
+        margin-top: 30px;
+        position: fixed;
+    }
+  /*и дальше стили меняющие бургер, двигающие менюшку по событию - нажатие на значек бургера*/
+    .hidden-menu-ticker:checked ~ .hidden-menu {
+        right: 0;
+        transition: all .1s linear .1s;
+    }
+    .hidden-menu-ticker:checked ~ .btn-menu span.first {
+        -webkit-transform: rotate(-90deg);
+        top: 14px;
+        right: 16px;
+    }
+    .hidden-menu-ticker:checked ~ .btn-menu span.second {
+        -webkit-transform: rotate(-90deg);
+        right: 8px;
+        top: 7px;
+    }
+    .hidden-menu-ticker:checked ~ .btn-menu span.third {
+        -webkit-transform: rotate(-90deg);
+    }
+   .backdrop {
+        position: fixed;
+        left: -100%;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(41, 41, 41, 0.6);
+        opacity: 0;
+        transition: opacity 0.3s ease;
+      }
+    .hidden-menu-ticker:checked ~ .hidden-menu + .backdrop {
+        left: 0;
+        opacity: 1;
+      }
+    .list_link_disabled {
+        font-family: Arial;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 32px;
+        line-height: 160%;
+        color: #CDCDCD;
+        flex-grow: 0;
+        width: 250px;
+        display: block;
+        text-align: center;
+        margin-left: 30px;
+        margin-top: 40px;
+    }
+    .list_link_active {
+        color: #FAFAFA;
+    }
+   /* .dropdown {
         position: relative;
     }
     .dropdown-content a {
@@ -830,7 +949,7 @@
     .change .bar3 {
       -webkit-transform: rotate(45deg) translate(-8px, -8px);
       transform: rotate(45deg) translate(-5px, -8px);
-    }
+    }*/
     .logo_title {
         margin-left: 10px;
     }
