@@ -180,7 +180,7 @@ btn.addEventListener('click', getImage);
 const blockquote = document.querySelector('blockquote');
 const figcaption = document.querySelector('figcaption');
 const btnone = document.querySelector('.btnone');
- 
+
 async function getQuote() {
   const url = 'https://quote-garden.herokuapp.com/api/v2/quotes/random';
   const res = await fetch(url);
