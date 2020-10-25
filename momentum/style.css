@@ -20,6 +20,7 @@ body {
 
 .time {
   font-size: 7rem;
+  transition: all 2s;
 }
 
 h1 {
@@ -39,9 +40,10 @@ h2 {
   background-repeat: no-repeat;
   filter: grayscale(1);
   margin: 10px;
+  transition: all 2s;
 }
 .btn:hover {
-  filter: grayscale(.8);
+  filter: grayscale(.2);
 }
 .btn:active,
 .btn:focus {
@@ -53,9 +55,9 @@ h2 {
 .quote {
   font: 2rem Georgia, serif;
   margin: 0;
-  padding: 1em;
   border-radius: 1em;
-  background-color: rgba(126, 191, 240, 0.4);
+  background-color: rgba(126, 191, 240, 0.35);
+  transition: all 2s;
 }
 .quote figcaption,
 .quote blockquote {
@@ -73,6 +75,7 @@ h2 {
   background-repeat: no-repeat;
   filter: grayscale(1);
   margin: 10px;
+  transition: all 2s;
 }
 .btnone:hover {
   filter: grayscale(.2);
@@ -84,8 +87,19 @@ h2 {
 .btnone:active{
   transform: scale(1.02)
 }
-@media (max-width: 700px) {
+@media (max-width: 850px) {
   .time {
-    font-size: 6rem;
+    font-size: 3rem;
+  }
+  .quote {
+    font-size: 1.5rem;
+  }
+}
+@media (max-width: 320px) {
+  .time {
+    font-size: 1.2rem;
+  }
+  .quote {
+    font-size: 1.2rem;
   }
 }
