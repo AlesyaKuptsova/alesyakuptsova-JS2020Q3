@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="main.css">
+    <script src="main.js" defer></script>
     <title>main</title>
 </head>
 <body class="body">
@@ -14,13 +15,30 @@
             <h1 class="logo_title">Cozy House</h1>
             <div class="logo_subtitle">Shelter for pets in Boston</div>
             </div>
+            <input type="checkbox" id="hmt" class="hidden-menu-ticker">
+            <label class="btn-menu" for="hmt">
+            <span class="first" id="first"></span>
+            <span class="second" id="second"></span>
+            <span class="third" id="third"></span>
+            </label>
+            <ul class="hidden-menu" id="menu">
+            <div class="logo" style="margin-top: 30px;">
+            <h1 class="logo_title">Cozy House</h1>
+            <div class="logo_subtitle">Shelter for pets in Boston</div>
+            </div>
+            <li><a class="list_link list_link_disabled list_link_active" href="main.html">About the shelter</a></li>
+            <li><a class="list_link list_link_disabled" href="../pets/pets.html">Our pets</a></li>
+            <li><a class="list_link list_link_disabled" href="#help">Help the shelter</a></li>
+            <li><a class="list_link list_link_disabled" href="#contacts">Contacts</a></li>
+            </ul>
+            <div class="backdrop" id="backdrop"></div>
             <nav class="menu">
                 <ul class="list">
                     <li class="list_item">
-                        <a class="list_link list_link_disabled list_link_active" href="#main.html">About the shelter</a>
+                        <a class="list_link list_link_disabled list_link_active" href="main.html">About the shelter</a>
                     </li>
                     <li class="list_item">
-                        <a class="list_link list_link_disabled" href="#ourpets">Our pets</a>
+                        <a class="list_link list_link_disabled" href="../pets/pets.html">Our pets</a>
                     </li>
                     <li class="list_item">
                         <a class="list_link list_link_disabled" href="#help">Help the shelter</a>
@@ -40,7 +58,7 @@
                             Not only people need a house
                         </h2>
                         <p class="p_main">We offer to give a chance to a little and nice puppy with an extremely wide and open heart. He or she will love you more than anybody else in the world, you will see!</p>
-                        <button type="button" class="button">
+                        <button type="button" class="button" onclick="document.location ='../pets/pets.html'">
                             <p class="p_button">Make a friend</p>
                         </button>
                     </div>
@@ -71,26 +89,81 @@
                     <div class="button_slider">
                         <img src="../../assets/icons/button_arrow.png" alt="button arrow" class="button_arrow">
                     </div>
-                    <div class="card">
+                    <div class="card" id="show">
                         <img src="../../assets/images/pets-katrine.png" alt="cat">
                         <text class="text_card">Katrine</text>
                         <div class="button_card">Learn more</div>
                     </div>
-                    <div class="card">
+                    <dialog>
+                        <img src="../../assets/icons/modal_close_button.png" alt="modal_close_button" id="close" class="modal_close_button_320">
+                        <section class="position_model_block_row">
+                            <img src="../../assets/images/pets-katrine.png" alt="cat" class="cat_modal_768">
+                            <section class="position_model_block">
+                                <h3 class="h3_Katrine">Katrine</h3>
+                                <h4 class="h4_Katrine">Cat - British Shorthair</h4>
+                                <p class="p_Katrine">Katrine is a beautiful girl. She is as soft as the finest velvet with a thick lush fur. Will love you until the last breath she takes as long as you are the one. She is picky about her affection. She loves cuddles and to stretch into your hands for a deeper relaxations.</p>
+                                <ul class="ul_Katrine">
+                                    <li><span class="li_Katrine"><strong>Age:</strong> 6 months</span></li>
+                                    <li><span class="li_Katrine"><strong>Inoculations:</strong> panleukopenia</span></li>
+                                    <li><span class="li_Katrine"><strong>Diseases:</strong> none</span></li>
+                                    <li><span class="li_Katrine"><strong>Parasites:</strong> none</span></li>
+                                </ul>
+                            </section>
+                        </section>
+                    </dialog>
+                    <div class="card inv" id="show_two">
                         <img src="../../assets/images/pets-jennifer.png" alt="dog">
                         <text class="text_card">Jennifer</text>
                         <div class="button_card">Learn more</div>
                     </div>
-                    <div class="card">
+                    <dialog id='dialog'>
+                        <img src="../../assets/icons/modal_close_button.png" alt="modal_close_button" id="close_two" class="modal_close_button_320">
+                        <section class="position_model_block_row">
+                            <img src="../../assets/images/pets-jennifer.png" alt="cat" class="cat_modal_768">
+                            <section class="position_model_block">
+                                <h3 class="h3_Katrine">Jennifer</h3>
+                                <h4 class="h4_Katrine">Dog - Labrador</h4>
+                                <p class="p_Katrine">Jennifer is a sweet 2 months old Labrador that is patiently waiting to find a new forever home. This girl really enjoys being able to go outside to run and play, but won't hesitate to play up a storm in the house if she has all of her favorite toys.</p>
+                                <ul class="ul_Katrine">
+                                    <li><span class="li_Katrine"><strong>Age:</strong> 2 months</span></li>
+                                    <li><span class="li_Katrine"><strong>Inoculations:</strong> parvovirus</span></li>
+                                    <li><span class="li_Katrine"><strong>Diseases:</strong> none</span></li>
+                                    <li><span class="li_Katrine"><strong>Parasites:</strong> none</span></li>
+                                </ul>
+                            </section>
+                        </section>
+                    </dialog>
+                    <div class="card_end" id="show_three">
                         <img src="../../assets/images/pets-woody.png" alt="dog">
                         <text class="text_card">Woody</text>
                         <div class="button_card">Learn more</div>
                     </div>
+                    <dialog id='dialogthree'>
+                        <img src="../../assets/icons/modal_close_button.png" alt="modal_close_button" id="close_three" class="modal_close_button_320">
+                        <section class="position_model_block_row">
+                            <img src="../../assets/images/pets-woody.png" alt="cat" class="cat_modal_768">
+                            <section class="position_model_block">
+                                <h3 class="h3_Katrine">Woody</h3>
+                                <h4 class="h4_Katrine">Dog - Golden Retriever</h4>
+                                <p class="p_Katrine">Woody is a handsome 3 1/2 year old boy. Woody does know basic commands and is a smart pup. Since he is on the stronger side, he will learn a lot from your training. Woody will be happier when he finds a new family that can spend a lot of time with him.</p>
+                                <ul class="ul_Katrine">
+                                    <li><span class="li_Katrine"><strong>Age:</strong> 3 years 6 months</span></li>
+                                    <li><span class="li_Katrine"><strong>Inoculations:</strong> adenovirus, distemper</span></li>
+                                    <li><span class="li_Katrine"><strong>Diseases:</strong> right back leg mobility reduced</span></li>
+                                    <li><span class="li_Katrine"><strong>Parasites:</strong> none</span></li>
+                                </ul>
+                            </section>
+                        </section>
+                    </dialog>
                     <div class="button_slider">
                         <img src="../../assets/icons/button_arrow_r.png" alt="button arrow" class="button_arrow">
                     </div>
                 </div>
-                <button class="button_get_to">
+                <div class="button320">
+                        <img src="../../assets/icons/button_arrow.png" alt="button arrow" id="button_arrow">
+                        <img src="../../assets/icons/button_arrow_r.png" alt="button arrow" id="button_arrow_r">
+                </div>
+                <button class="button_get_to" onclick="document.location ='../pets/pets.html'">
                     Get to know the rest
                 </button>
             </div>
@@ -100,6 +173,86 @@
         <div class="wrapper">
             <div class="help_block">
                 <h3 class="h3_help">How you can help <br/> our shelter</h3>
+                <div class="help_block_column">
+                    <div class="list_help">
+                        <img src="../../assets/icons/icon-pet-food.svg" alt="pet food">
+                        <h4 class="h4_help">Pet food</h4>
+                    </div>
+                    <div class="list_help">
+                        <img src="../../assets/icons/icon-transportation.svg" alt="Transportation">
+                        <h4 class="h4_help">Transportation</h4>
+                    </div>
+                    <div class="list_help">
+                        <img src="../../assets/icons/icon-toys.svg" alt="Toys">
+                        <h4 class="h4_help">Toys</h4>
+                    </div>
+                    <div class="list_help">
+                        <img src="../../assets/icons/icon-bowls-and-cups.svg" alt="bowls and cups">
+                        <h4 class="h4_help">Bowls and cups</h4>
+                    </div>
+                    <div class="list_help">
+                        <img src="../../assets/icons/icon-shampoos.svg" alt="Shampoos">
+                        <h4 class="h4_help">Shampoos</h4>
+                    </div>
+                    <div class="list_help">
+                        <img src="../../assets/icons/icon-vitamins.svg" alt="Vitamins">
+                        <h4 class="h4_help">Vitamins</h4>
+                    </div>
+                    <div class="list_help">
+                        <img src="../../assets/icons/icon-medicines.svg" alt="Medicines">
+                        <h4 class="h4_help">Medicines</h4>
+                    </div>
+                    <div class="list_help">
+                        <img src="../../assets/icons/icon-collars-leashes.svg" alt="Collars">
+                        <h4 class="h4_help">Collars / leashes</h4>
+                    </div>
+                    <div class="list_help">
+                        <img src="../../assets/icons/icon-sleeping-area.svg" alt="Sleeping areas">
+                        <h4 class="h4_help">Sleeping areas</h4>
+                    </div>
+                </div>
+                <div class="grid_column">
+                    <div class="help_block_row_one">
+                        <div class="list_help">
+                            <img src="../../assets/icons/icon-pet-food.svg" alt="pet food" class="size_help_icon">
+                            <h4 class="h4_help">Pet food</h4>
+                        </div>
+                        <div class="list_help">
+                            <img src="../../assets/icons/icon-toys.svg" alt="Toys" class="size_help_icon">
+                            <h4 class="h4_help">Toys</h4>
+                        </div>
+                        <div class="list_help">
+                            <img src="../../assets/icons/icon-shampoos.svg" alt="Shampoos" class="size_help_icon">
+                            <h4 class="h4_help">Shampoos</h4>
+                        </div>
+                        <div class="list_help">
+                            <img src="../../assets/icons/icon-medicines.svg" alt="Medicines" class="size_help_icon">
+                            <h4 class="h4_help">Medicines</h4>
+                        </div>
+                        <div class="list_help">
+                            <img src="../../assets/icons/icon-sleeping-area.svg" alt="Sleeping areas" class="size_help_icon">
+                            <h4 class="h4_help">Sleeping areas</h4>
+                        </div>
+                    </div>
+                    <div class="help_block_row_two">
+                        <div class="list_help">
+                            <img src="../../assets/icons/icon-transportation.svg" alt="Transportation" class="size_help_icon">
+                            <h4 class="h4_help">Transportation</h4>
+                        </div>
+                        <div class="list_help">
+                            <img src="../../assets/icons/icon-bowls-and-cups.svg" alt="bowls and cups" class="size_help_icon">
+                            <h4 class="h4_help">Bowls and cups</h4>
+                        </div>
+                        <div class="list_help">
+                            <img src="../../assets/icons/icon-vitamins.svg" alt="Vitamins" class="size_help_icon">
+                            <h4 class="h4_help">Vitamins</h4>
+                        </div>
+                        <div class="list_help">
+                            <img src="../../assets/icons/icon-collars-leashes.svg" alt="Collars" class="size_help_icon">
+                            <h4 class="h4_help">Collars / leashes</h4>
+                        </div>
+                    </div>
+                </div>
                 <div class="help_block_column_1">
                     <div class="list_help">
                         <img src="../../assets/icons/icon-pet-food.svg" alt="pet food">
@@ -146,12 +299,12 @@
     <div class="inaddition">
         <div class="wrapper">
             <div class="inaddition_block">
-                <img src="../../assets/images/donation-dog.png" alt="donation dog" style="margin-top: 30px;">
+                <img src="../../assets/images/donation-dog.png" alt="donation dog" class="dog">
                 <div class="inaddition_information">
                     <h3 class="h3_inaddition">You can also make a donation</h3>
                     <h5 class="h5_inaddition">Name of the bank / Type of bank account</h5>
                     <div class="credit_card">
-                        <a href="#bank"><img src="../../assets/icons/credit-card.svg" alt="credit_card"></a>
+                        <a href="#bank"><img src="../../assets/icons/credit-card.svg" alt="credit_card" id="card"></a>
                         <a href="#bank" class="h4_inaddition">8380 2880 8028 8791 7435</a>
                     </div>
                     <text class="text_inaddition">Legal information and lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas a ipsum at libero sagittis dignissim sed ac diam.
@@ -164,7 +317,7 @@
         <div class="wrapper">
             <div class="footer_block">
                 <div class="contacts">
-                    <h3 class="h3_footer">For questions and suggestions</h3>
+                    <h3 class="h3_footer" id="footer_text">For questions and suggestions</h3>
                     <a href="mailto:email@shelter.com" class="a item_row">
                         <img src="../../assets/icons/icon-email.svg" alt="email">
                         <h4 class="h4_footer">email@shelter.com</h4>
@@ -185,7 +338,34 @@
                         <h4 class="h4_footer">18 South Park, London </h4>
                     </a>
                 </div>
-                <img src="../../assets/images/footer-puppy.png" alt="dog">
+                <img src="../../assets/images/footer-puppy.png" alt="dog" id="dog_footer">
+            </div>
+            <div class="footer_rows">
+                <div class="footer_768">
+                    <div class="contacts">
+                        <h3 class="h3_footer">For questions and suggestions</h3>
+                        <a href="mailto:email@shelter.com" class="a item_row">
+                            <img src="../../assets/icons/icon-email.svg" alt="email">
+                            <h4 class="h4_footer">email@shelter.com</h4>
+                        </a>
+                        <a href="tel:+13 674 567 75 54" class="a item_row">
+                            <img src="../../assets/icons/icon-phone.svg" alt="phone">
+                            <h4 class="h4_footer">+13 674 567 75 54</h4>
+                        </a>
+                    </div>
+                    <div class="location">
+                        <h3 class="h3_footer">We are waiting for your visit</h3>
+                        <a class="a item_row" href="https://goo.gl/maps/sV6tQFfHMAnajamS8" target="_blank">
+                            <img src="../../assets/icons/icon-marker.svg" alt="location">
+                            <h4 class="h4_footer">1 Central Street, Boston (entrance from the store)</h4>
+                        </a>
+                        <a class="a item_row" href="https://goo.gl/maps/mJ6TU6nT95p8WTph6" target="_blank">
+                            <img src="../../assets/icons/icon-marker.svg" alt="location">
+                            <h4 class="h4_footer">18 South Park, London </h4>
+                        </a>
+                    </div>
+                </div>
+                <img src="../../assets/images/footer-puppy.png" alt="dog" class="footer_img">
             </div>
         </div>
     </footer>

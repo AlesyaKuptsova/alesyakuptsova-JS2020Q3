@@ -14,13 +14,31 @@
         <h1 class="logo_title">Cozy House</h1>
         <div class="logo_subtitle">Shelter for pets in Boston</div>
         </div>
+        <input type="checkbox" id="hmt" class="hidden-menu-ticker">
+        <label class="btn-menu" for="hmt">
+        <span class="first" id="first"></span>
+        <span class="second" id="second"></span>
+        <span class="third" id="third"></span>
+        </label>
+        <ul class="hidden-menu" id="menu">
+        <div class="logo" style="margin-top: 20px; margin-left: 0px">
+        <h1 class="logo_style"><a href="../main/main.html">Cozy House</a></h1>
+        <div class="logo_subtitle_style">Shelter for pets in Boston</div>
+        </div>
+        <li style="margin-top: 158px;"><a class="list_link list_link_disabled list_link_active" href="../main/main.html">About the shelter</a></li>
+        <li><a class="list_link list_link_disabled" href="pets.html">Our pets</a></li>
+        <li><a class="list_link list_link_disabled" href="#help">Help the shelter</a></li>
+        <li><a class="list_link list_link_disabled" href="#contacts">Contacts</a></li>
+        </ul>
+        <div class="backdrop" id="backdrop"></div>
+
             <nav class="menu">
                 <ul class="list">
                     <li class="list_item">
-                        <a class="list_link list_link_disabled list_link_active" href="#main.html">About the shelter</a>
+                        <a class="list_link list_link_disabled list_link_active" href="../main/main.html">About the shelter</a>
                     </li>
                     <li class="list_item">
-                        <a class="list_link list_link_disabled" href="#ourpets">Our pets</a>
+                        <a class="list_link list_link_disabled" href="pets.html">Our pets</a>
                     </li>
                     <li class="list_item">
                         <a class="list_link list_link_disabled" href="#help">Help the shelter</a>
@@ -36,54 +54,392 @@
         <div class="wrapper">
             <div class="our_friends_block">
                 <h3 class="our_heding_header">Our friends who <br/>are looking for a house</h3>
-                <div class="slider_cards">
-                    <div class="card">
+                <div class="slider320">
+                    <div class="card" id="Katrine" >
                         <img src="../../assets/images/pets-katrine.png" alt="cat">
                         <text class="text_card">Katrine</text>
                         <div class="button_card">Learn more</div>
                     </div>
-                    <div class="card">
+                    <dialog>
+                        <img src="../../assets/icons/modal_close_button.png" alt="modal_close_button" id="close" class="modal_close_button_320">
+                        <section class="position_model_block_row">
+                            <img src="../../assets/images/pets-katrine.png" alt="cat" class="cat_modal_768">
+                            <section class="position_model_block">
+                                <h3 class="h3_Katrine">Katrine</h3>
+                                <h4 class="h4_Katrine">Cat - British Shorthair</h4>
+                                <p class="p_Katrine">Katrine is a beautiful girl. She is as soft as the finest velvet with a thick lush fur. Will love you until the last breath she takes as long as you are the one. She is picky about her affection. She loves cuddles and to stretch into your hands for a deeper relaxations.</p>
+                                <ul class="ul_Katrine">
+                                    <li><span class="li_Katrine"><strong>Age:</strong> 6 months</span></li>
+                                    <li><span class="li_Katrine"><strong>Inoculations:</strong> panleukopenia</span></li>
+                                    <li><span class="li_Katrine"><strong>Diseases:</strong> none</span></li>
+                                    <li><span class="li_Katrine"><strong>Parasites:</strong> none</span></li>
+                                </ul>
+                            </section>
+                        </section>
+                    </dialog>
+                    <div class="card" id="Jennifer">
                         <img src="../../assets/images/pets-jennifer.png" alt="dog">
                         <text class="text_card">Jennifer</text>
                         <div class="button_card">Learn more</div>
                     </div>
-                    <div class="card">
+                    <dialog id='dialog'>
+                        <img src="../../assets/icons/modal_close_button.png" alt="modal_close_button" id="close_two" class="modal_close_button_320">
+                        <section class="position_model_block_row">
+                            <img src="../../assets/images/pets-jennifer.png" alt="cat" class="cat_modal_768">
+                            <section class="position_model_block">
+                                <h3 class="h3_Katrine">Jennifer</h3>
+                                <h4 class="h4_Katrine">Dog - Labrador</h4>
+                                <p class="p_Katrine">Jennifer is a sweet 2 months old Labrador that is patiently waiting to find a new forever home. This girl really enjoys being able to go outside to run and play, but won't hesitate to play up a storm in the house if she has all of her favorite toys.</p>
+                                <ul class="ul_Katrine">
+                                    <li><span class="li_Katrine"><strong>Age:</strong> 2 months</span></li>
+                                    <li><span class="li_Katrine"><strong>Inoculations:</strong> parvovirus</span></li>
+                                    <li><span class="li_Katrine"><strong>Diseases:</strong> none</span></li>
+                                    <li><span class="li_Katrine"><strong>Parasites:</strong> none</span></li>
+                                </ul>
+                            </section>
+                        </section>
+                    </dialog>
+                    <div class="card" id="Woody">
                         <img src="../../assets/images/pets-woody.png" alt="dog">
                         <text class="text_card">Woody</text>
                         <div class="button_card">Learn more</div>
                     </div>
-                    <div class="card">
+                    <dialog id='dialogthree'>
+                        <img src="../../assets/icons/modal_close_button.png" alt="modal_close_button" id="close_three" class="modal_close_button_320">
+                        <section class="position_model_block_row">
+                            <img src="../../assets/images/pets-woody.png" alt="cat" class="cat_modal_768">
+                            <section class="position_model_block">
+                                <h3 class="h3_Katrine">Woody</h3>
+                                <h4 class="h4_Katrine">Dog - Golden Retriever</h4>
+                                <p class="p_Katrine">Woody is a handsome 3 1/2 year old boy. Woody does know basic commands and is a smart pup. Since he is on the stronger side, he will learn a lot from your training. Woody will be happier when he finds a new family that can spend a lot of time with him.</p>
+                                <ul class="ul_Katrine">
+                                    <li><span class="li_Katrine"><strong>Age:</strong> 3 years 6 months</span></li>
+                                    <li><span class="li_Katrine"><strong>Inoculations:</strong> adenovirus, distemper</span></li>
+                                    <li><span class="li_Katrine"><strong>Diseases:</strong> right back leg mobility reduced</span></li>
+                                    <li><span class="li_Katrine"><strong>Parasites:</strong> none</span></li>
+                                </ul>
+                            </section>
+                        </section>
+                    </dialog>
+                </div>
+                <div class="slider_cards_768">
+                    <div class="card" id="katrine768">
+                        <img src="../../assets/images/pets-katrine.png" alt="cat">
+                        <text class="text_card">Katrine</text>
+                        <div class="button_card">Learn more</div>
+                    </div>
+                    <dialog id='dialogkatrine768'>
+                        <img src="../../assets/icons/modal_close_button.png" alt="modal_close_button" id="close_katrine768" class="modal_close_button_320">
+                        <section class="position_model_block_row">
+                            <img src="../../assets/images/pets-katrine.png" alt="cat" class="cat_modal_768">
+                            <section class="position_model_block">
+                                <h3 class="h3_Katrine">Katrine</h3>
+                                <h4 class="h4_Katrine">Cat - British Shorthair</h4>
+                                <p class="p_Katrine">Katrine is a beautiful girl. She is as soft as the finest velvet with a thick lush fur. Will love you until the last breath she takes as long as you are the one. She is picky about her affection. She loves cuddles and to stretch into your hands for a deeper relaxations.</p>
+                                <ul class="ul_Katrine">
+                                    <li><span class="li_Katrine"><strong>Age:</strong> 6 months</span></li>
+                                    <li><span class="li_Katrine"><strong>Inoculations:</strong> panleukopenia</span></li>
+                                    <li><span class="li_Katrine"><strong>Diseases:</strong> none</span></li>
+                                    <li><span class="li_Katrine"><strong>Parasites:</strong> none</span></li>
+                                </ul>
+                            </section>
+                        </section>
+                    </dialog>
+                    <div class="card" id="jennifer768">
+                        <img src="../../assets/images/pets-jennifer.png" alt="dog">
+                        <text class="text_card">Jennifer</text>
+                        <div class="button_card">Learn more</div>
+                    </div>
+                    <dialog id='dialogjennifer768'>
+                        <img src="../../assets/icons/modal_close_button.png" alt="modal_close_button" id="close_jennifer768" class="modal_close_button_320">
+                        <section class="position_model_block_row">
+                            <img src="../../assets/images/pets-jennifer.png" alt="cat" class="cat_modal_768">
+                            <section class="position_model_block">
+                                <h3 class="h3_Katrine">Jennifer</h3>
+                                <h4 class="h4_Katrine">Dog - Labrador</h4>
+                                <p class="p_Katrine">Jennifer is a sweet 2 months old Labrador that is patiently waiting to find a new forever home. This girl really enjoys being able to go outside to run and play, but won't hesitate to play up a storm in the house if she has all of her favorite toys.</p>
+                                <ul class="ul_Katrine">
+                                    <li><span class="li_Katrine"><strong>Age:</strong> 2 months</span></li>
+                                    <li><span class="li_Katrine"><strong>Inoculations:</strong> parvovirus</span></li>
+                                    <li><span class="li_Katrine"><strong>Diseases:</strong> none</span></li>
+                                    <li><span class="li_Katrine"><strong>Parasites:</strong> none</span></li>
+                                </ul>
+                            </section>
+                        </section>
+                    </dialog>
+                    <div class="card" id="woody_768">
+                        <img src="../../assets/images/pets-woody.png" alt="dog">
+                        <text class="text_card">Woody</text>
+                        <div class="button_card">Learn more</div>
+                    </div>
+                    <dialog id='dialogtwoody768'>
+                        <img src="../../assets/icons/modal_close_button.png" alt="modal_close_button" id="close_woody768" class="modal_close_button_320">
+                        <section class="position_model_block_row">
+                            <img src="../../assets/images/pets-woody.png" alt="cat" class="cat_modal_768">
+                            <section class="position_model_block">
+                                <h3 class="h3_Katrine">Woody</h3>
+                                <h4 class="h4_Katrine">Dog - Golden Retriever</h4>
+                                <p class="p_Katrine">Woody is a handsome 3 1/2 year old boy. Woody does know basic commands and is a smart pup. Since he is on the stronger side, he will learn a lot from your training. Woody will be happier when he finds a new family that can spend a lot of time with him.</p>
+                                <ul class="ul_Katrine">
+                                    <li><span class="li_Katrine"><strong>Age:</strong> 3 years 6 months</span></li>
+                                    <li><span class="li_Katrine"><strong>Inoculations:</strong> adenovirus, distemper</span></li>
+                                    <li><span class="li_Katrine"><strong>Diseases:</strong> right back leg mobility reduced</span></li>
+                                    <li><span class="li_Katrine"><strong>Parasites:</strong> none</span></li>
+                                </ul>
+                            </section>
+                        </section>
+                    </dialog>
+                    <div class="card" id="sophia768">
                         <img src="../../assets/images/pets-katrine1.png" alt="dog">
                         <text class="text_card">Sophia</text>
                         <div class="button_card">Learn more</div>
                     </div>
-                </div>
-                <div class="slider_cards">
-                    <div class="card">
+                    <dialog id='dialogsophia768'>
+                        <img src="../../assets/icons/modal_close_button.png" alt="modal_close_button" id="close_sophia768" class="modal_close_button_320">
+                        <section class="position_model_block_row">
+                            <img src="../../assets/images/pets-katrine1.png" alt="cat" class="cat_modal_768">
+                            <section class="position_model_block">
+                                <h3 class="h3_Katrine">Sophia</h3>
+                                <h4 class="h4_Katrine">Dog - Shih tzu</h4>
+                                <p class="p_Katrine">Sophia here and I'm looking for my forever home to live out the best years of my life. I am full of energy. Everyday I'm learning new things, like how to walk on a leash, go potty outside, bark and play with toys and I still need some practice.</p>
+                                <ul class="ul_Katrine">
+                                    <li><span class="li_Katrine"><strong>Age:</strong> 1 month</span></li>
+                                    <li><span class="li_Katrine"><strong>Inoculations:</strong> parvovirus</span></li>
+                                    <li><span class="li_Katrine"><strong>Diseases:</strong> none</span></li>
+                                    <li><span class="li_Katrine"><strong>Parasites:</strong> none</span></li>
+                                </ul>
+                            </section>
+                        </section>
+                    </dialog>
+                    <div class="card" id="timmy768">
                         <img src="../../assets/images/pets-timmy.png" alt="cat">
                         <text class="text_card">Timmy</text>
                         <div class="button_card">Learn more</div>
                     </div>
-                    <div class="card">
+                    <dialog id='dialogtimmy768'>
+                        <img src="../../assets/icons/modal_close_button.png" alt="modal_close_button" id="close_timmy768" class="modal_close_button_320">
+                        <section class="position_model_block_row">
+                            <img src="../../assets/images/pets-timmy.png" alt="cat" class="cat_modal_768">
+                            <section class="position_model_block">
+                                <h3 class="h3_Katrine">Timmy</h3>
+                                <h4 class="h4_Katrine">Cat - British Shorthair</h4>
+                                <p class="p_Katrine">Timmy is an adorable grey british shorthair male. He loves to play and snuggle. He is neutered and up to date on age appropriate vaccinations. He can be chatty and enjoys being held. Timmy has a lot to say and wants a person to share his thoughts with.</p>
+                                <ul class="ul_Katrine">
+                                    <li><span class="li_Katrine"><strong>Age:</strong> 2 years 3 months</span></li>
+                                    <li><span class="li_Katrine"><strong>Inoculations:</strong> calicivirus, viral rhinotracheitis</span></li>
+                                    <li><span class="li_Katrine"><strong>Diseases:</strong> kidney stones</span></li>
+                                    <li><span class="li_Katrine"><strong>Parasites:</strong> none</span></li>
+                                </ul>
+                            </section>
+                        </section>
+                    </dialog>
+                    <div class="card" id="charly768">
                         <img src="../../assets/images/pets-charly.png" alt="dog">
                         <text class="text_card">Charly</text>
                         <div class="button_card">Learn more</div>
                     </div>
-                    <div class="card">
+                    <dialog id='dialogcharly768'>
+                        <img src="../../assets/icons/modal_close_button.png" alt="modal_close_button" id="close_charly768" class="modal_close_button_320">
+                        <section class="position_model_block_row">
+                            <img src="../../assets/images/pets-charly.png" alt="cat" class="cat_modal_768">
+                            <section class="position_model_block">
+                                <h3 class="h3_Katrine">Charly</h3>
+                                <h4 class="h4_Katrine">Dog - Jack Russell Terrier</h4>
+                                <p class="p_Katrine">This cute boy, Charly, is three years old and he likes adults and kids. He isn’t fond of many other dogs, so he might do best in a single dog home. Charly has lots of energy, and loves to run and play. We think a fenced yard would make him very happy.</p>
+                                <ul class="ul_Katrine">
+                                    <li><span class="li_Katrine"><strong>Age:</strong> 8 years</span></li>
+                                    <li><span class="li_Katrine"><strong>Inoculations:</strong> bordetella bronchiseptica, leptospirosis</span></li>
+                                    <li><span class="li_Katrine"><strong>Diseases:</strong> deafness, blindness</span></li>
+                                    <li><span class="li_Katrine"><strong>Parasites:</strong> lice, fleas</span></li>
+                                </ul>
+                            </section>
+                        </section>
+                    </dialog>
+                </div>
+                <div class="slider_cards">
+                    <div class="card" id="katrine1280">
+                        <img src="../../assets/images/pets-katrine.png" alt="cat">
+                        <text class="text_card">Katrine</text>
+                        <div class="button_card">Learn more</div>
+                    </div>
+                    <dialog id='dialogkatrine1280'>
+                        <img src="../../assets/icons/modal_close_button.png" alt="modal_close_button" id="close_katrine1280" class="modal_close_button_320">
+                        <section class="position_model_block_row">
+                            <img src="../../assets/images/pets-katrine.png" alt="cat" class="cat_modal_768">
+                            <section class="position_model_block">
+                                <h3 class="h3_Katrine">Katrine</h3>
+                                <h4 class="h4_Katrine">Cat - British Shorthair</h4>
+                                <p class="p_Katrine">Katrine is a beautiful girl. She is as soft as the finest velvet with a thick lush fur. Will love you until the last breath she takes as long as you are the one. She is picky about her affection. She loves cuddles and to stretch into your hands for a deeper relaxations.</p>
+                                <ul class="ul_Katrine">
+                                    <li><span class="li_Katrine"><strong>Age:</strong> 6 months</span></li>
+                                    <li><span class="li_Katrine"><strong>Inoculations:</strong> panleukopenia</span></li>
+                                    <li><span class="li_Katrine"><strong>Diseases:</strong> none</span></li>
+                                    <li><span class="li_Katrine"><strong>Parasites:</strong> none</span></li>
+                                </ul>
+                            </section>
+                        </section>
+                    </dialog>
+                    <div class="card" id="jennifer1280">
+                        <img src="../../assets/images/pets-jennifer.png" alt="dog">
+                        <text class="text_card">Jennifer</text>
+                        <div class="button_card">Learn more</div>
+                    </div>
+                    <dialog id='dialogjennifer1280'>
+                        <img src="../../assets/icons/modal_close_button.png" alt="modal_close_button" id="close_jennifer1280" class="modal_close_button_320">
+                        <section class="position_model_block_row">
+                            <img src="../../assets/images/pets-jennifer.png" alt="cat" class="cat_modal_768">
+                            <section class="position_model_block">
+                                <h3 class="h3_Katrine">Jennifer</h3>
+                                <h4 class="h4_Katrine">Dog - Labrador</h4>
+                                <p class="p_Katrine">Jennifer is a sweet 2 months old Labrador that is patiently waiting to find a new forever home. This girl really enjoys being able to go outside to run and play, but won't hesitate to play up a storm in the house if she has all of her favorite toys.</p>
+                                <ul class="ul_Katrine">
+                                    <li><span class="li_Katrine"><strong>Age:</strong> 2 months</span></li>
+                                    <li><span class="li_Katrine"><strong>Inoculations:</strong> parvovirus</span></li>
+                                    <li><span class="li_Katrine"><strong>Diseases:</strong> none</span></li>
+                                    <li><span class="li_Katrine"><strong>Parasites:</strong> none</span></li>
+                                </ul>
+                            </section>
+                        </section>
+                    </dialog>
+                    <div class="card" id="woody1280">
+                        <img src="../../assets/images/pets-woody.png" alt="dog">
+                        <text class="text_card">Woody</text>
+                        <div class="button_card">Learn more</div>
+                    </div>
+                    <dialog id='dialogtwoody1280'>
+                        <img src="../../assets/icons/modal_close_button.png" alt="modal_close_button" id="close_woody1280" class="modal_close_button_320">
+                        <section class="position_model_block_row">
+                            <img src="../../assets/images/pets-woody.png" alt="cat" class="cat_modal_768">
+                            <section class="position_model_block">
+                                <h3 class="h3_Katrine">Woody</h3>
+                                <h4 class="h4_Katrine">Dog - Golden Retriever</h4>
+                                <p class="p_Katrine">Woody is a handsome 3 1/2 year old boy. Woody does know basic commands and is a smart pup. Since he is on the stronger side, he will learn a lot from your training. Woody will be happier when he finds a new family that can spend a lot of time with him.</p>
+                                <ul class="ul_Katrine">
+                                    <li><span class="li_Katrine"><strong>Age:</strong> 3 years 6 months</span></li>
+                                    <li><span class="li_Katrine"><strong>Inoculations:</strong> adenovirus, distemper</span></li>
+                                    <li><span class="li_Katrine"><strong>Diseases:</strong> right back leg mobility reduced</span></li>
+                                    <li><span class="li_Katrine"><strong>Parasites:</strong> none</span></li>
+                                </ul>
+                            </section>
+                        </section>
+                    </dialog>
+                    <div class="card" id="sophia1280">
+                        <img src="../../assets/images/pets-katrine1.png" alt="dog">
+                        <text class="text_card">Sophia</text>
+                        <div class="button_card">Learn more</div>
+                    </div>
+                    <dialog id='dialogsophia1280'>
+                        <img src="../../assets/icons/modal_close_button.png" alt="modal_close_button" id="close_sophia1280" class="modal_close_button_320">
+                        <section class="position_model_block_row">
+                            <img src="../../assets/images/pets-katrine1.png" alt="cat" class="cat_modal_768">
+                            <section class="position_model_block">
+                                <h3 class="h3_Katrine">Sophia</h3>
+                                <h4 class="h4_Katrine">Dog - Shih tzu</h4>
+                                <p class="p_Katrine">Sophia here and I'm looking for my forever home to live out the best years of my life. I am full of energy. Everyday I'm learning new things, like how to walk on a leash, go potty outside, bark and play with toys and I still need some practice.</p>
+                                <ul class="ul_Katrine">
+                                    <li><span class="li_Katrine"><strong>Age:</strong> 1 month</span></li>
+                                    <li><span class="li_Katrine"><strong>Inoculations:</strong> parvovirus</span></li>
+                                    <li><span class="li_Katrine"><strong>Diseases:</strong> none</span></li>
+                                    <li><span class="li_Katrine"><strong>Parasites:</strong> none</span></li>
+                                </ul>
+                            </section>
+                        </section>
+                    </dialog>
+                </div>
+                <div class="slider_cards">
+                    <div class="card" id="timmy1280">
+                        <img src="../../assets/images/pets-timmy.png" alt="cat">
+                        <text class="text_card">Timmy</text>
+                        <div class="button_card">Learn more</div>
+                    </div>
+                    <dialog id='dialogtimmy1280'>
+                        <img src="../../assets/icons/modal_close_button.png" alt="modal_close_button" id="close_timmy1280" class="modal_close_button_320">
+                        <section class="position_model_block_row">
+                            <img src="../../assets/images/pets-timmy.png" alt="cat" class="cat_modal_768">
+                            <section class="position_model_block">
+                                <h3 class="h3_Katrine">Timmy</h3>
+                                <h4 class="h4_Katrine">Cat - British Shorthair</h4>
+                                <p class="p_Katrine">Timmy is an adorable grey british shorthair male. He loves to play and snuggle. He is neutered and up to date on age appropriate vaccinations. He can be chatty and enjoys being held. Timmy has a lot to say and wants a person to share his thoughts with.</p>
+                                <ul class="ul_Katrine">
+                                    <li><span class="li_Katrine"><strong>Age:</strong> 2 years 3 months</span></li>
+                                    <li><span class="li_Katrine"><strong>Inoculations:</strong> calicivirus, viral rhinotracheitis</span></li>
+                                    <li><span class="li_Katrine"><strong>Diseases:</strong> kidney stones</span></li>
+                                    <li><span class="li_Katrine"><strong>Parasites:</strong> none</span></li>
+                                </ul>
+                            </section>
+                        </section>
+                    </dialog>
+                    <div class="card" id="charly1280">
+                        <img src="../../assets/images/pets-charly.png" alt="dog">
+                        <text class="text_card">Charly</text>
+                        <div class="button_card">Learn more</div>
+                    </div>
+                    <dialog id='dialogcharly1280'>
+                        <img src="../../assets/icons/modal_close_button.png" alt="modal_close_button" id="close_charly1280" class="modal_close_button_320">
+                        <section class="position_model_block_row">
+                            <img src="../../assets/images/pets-charly.png" alt="cat" class="cat_modal_768">
+                            <section class="position_model_block">
+                                <h3 class="h3_Katrine">Charly</h3>
+                                <h4 class="h4_Katrine">Dog - Jack Russell Terrier</h4>
+                                <p class="p_Katrine">This cute boy, Charly, is three years old and he likes adults and kids. He isn’t fond of many other dogs, so he might do best in a single dog home. Charly has lots of energy, and loves to run and play. We think a fenced yard would make him very happy.</p>
+                                <ul class="ul_Katrine">
+                                    <li><span class="li_Katrine"><strong>Age:</strong> 8 years</span></li>
+                                    <li><span class="li_Katrine"><strong>Inoculations:</strong> bordetella bronchiseptica, leptospirosis</span></li>
+                                    <li><span class="li_Katrine"><strong>Diseases:</strong> deafness, blindness</span></li>
+                                    <li><span class="li_Katrine"><strong>Parasites:</strong> lice, fleas</span></li>
+                                </ul>
+                            </section>
+                        </section>
+                    </dialog>
+                    <div class="card" id="scarlett1280">
                         <img src="../../assets/images/pets-scarlet.png" alt="dog">
                         <text class="text_card">Scarlett</text>
                         <div class="button_card">Learn more</div>
                     </div>
-                    <div class="card">
+                    <dialog id='dialogscarlett1280'>
+                        <img src="../../assets/icons/modal_close_button.png" alt="modal_close_button" id="close_scarlett1280" class="modal_close_button_320">
+                        <section class="position_model_block_row">
+                            <img src="../../assets/images/pets-scarlet.png" alt="cat" class="cat_modal_768">
+                            <section class="position_model_block">
+                                <h3 class="h3_Katrine">Scarlett</h3>
+                                <h4 class="h4_Katrine">Dog - Jack Russell Terrier</h4>
+                                <p class="p_Katrine">Scarlett is a happy, playful girl who will make you laugh and smile. She forms a bond quickly and will make a loyal companion and a wonderful family dog or a good companion for a single individual too since she likes to hang out and be with her human.</p>
+                                <ul class="ul_Katrine">
+                                    <li><span class="li_Katrine"><strong>Age:</strong> 3 months</span></li>
+                                    <li><span class="li_Katrine"><strong>Inoculations:</strong> parainfluenza</span></li>
+                                    <li><span class="li_Katrine"><strong>Diseases:</strong> none</span></li>
+                                    <li><span class="li_Katrine"><strong>Parasites:</strong> none</span></li>
+                                </ul>
+                            </section>
+                        </section>
+                    </dialog>
+                    <div class="card" id="freddie1280">
                         <img src="../../assets/images/pets-Freddie.png" alt="cat">
                         <text class="text_card">Freddie</text>
                         <div class="button_card">Learn more</div>
                     </div>
+                    <dialog id='dialogfreddie1280'>
+                        <img src="../../assets/icons/modal_close_button.png" alt="modal_close_button" id="close_freddie1280" class="modal_close_button_320">
+                        <section class="position_model_block_row">
+                            <img src="../../assets/images/pets-Freddie.png" alt="cat" class="cat_modal_768">
+                            <section class="position_model_block">
+                                <h3 class="h3_Katrine">Freddie</h3>
+                                <h4 class="h4_Katrine">Cat - British Shorthair</h4>
+                                <p class="p_Katrine">Freddie is a little shy at first, but very sweet when he warms up. He likes playing with shoe strings and bottle caps. He is quick to learn the rhythms of his human’s daily life. Freddie has bounced around a lot in his life, and is looking to find his forever home.</p>
+                                <ul class="ul_Katrine">
+                                    <li><span class="li_Katrine"><strong>Age:</strong> 2 months</span></li>
+                                    <li><span class="li_Katrine"><strong>Inoculations:</strong> rabies</span></li>
+                                    <li><span class="li_Katrine"><strong>Diseases:</strong> none</span></li>
+                                    <li><span class="li_Katrine"><strong>Parasites:</strong> none</span></li>
+                                </ul>
+                            </section>
+                        </section>
+                    </dialog>
                 </div>
                 <div class="position_button" id="myDIV">
                     <button class="button_paginator_inactive" disabled><span>< <</span></button>
                     <button class="button_paginator_inactive" disabled><</button>
-                    <button class="button_paginator_active active">1</button>
+                    <button class="button_paginator active">1</button>
                     <button class="button_paginator">></button>
                     <button class="button_paginator"><span>> ></span></button>
                 </div>
@@ -94,7 +450,7 @@
         <div class="wrapper">
             <div class="footer_block">
                 <div class="contacts">
-                    <h3 class="h3_footer">For questions and suggestions</h3>
+                    <h3 class="h3_footer" id="footer_text">For questions and suggestions</h3>
                     <a href="mailto:email@shelter.com" class="a item_row">
                         <img src="../../assets/icons/icon-email.svg" alt="email">
                         <h4 class="h4_footer">email@shelter.com</h4>
@@ -115,7 +471,34 @@
                         <h4 class="h4_footer">18 South Park, London </h4>
                     </a>
                 </div>
-                <img src="../../assets/images/footer-puppy.png" alt="dog">
+                <img src="../../assets/images/footer-puppy.png" alt="dog" id="dog_footer">
+            </div>
+            <div class="footer_rows">
+                <div class="footer_768">
+                    <div class="contacts">
+                        <h3 class="h3_footer">For questions and suggestions</h3>
+                        <a href="mailto:email@shelter.com" class="a item_row">
+                            <img src="../../assets/icons/icon-email.svg" alt="email">
+                            <h4 class="h4_footer">email@shelter.com</h4>
+                        </a>
+                        <a href="tel:+13 674 567 75 54" class="a item_row">
+                            <img src="../../assets/icons/icon-phone.svg" alt="phone">
+                            <h4 class="h4_footer">+13 674 567 75 54</h4>
+                        </a>
+                    </div>
+                    <div class="location">
+                        <h3 class="h3_footer">We are waiting for your visit</h3>
+                        <a class="a item_row" href="https://goo.gl/maps/sV6tQFfHMAnajamS8" target="_blank">
+                            <img src="../../assets/icons/icon-marker.svg" alt="location">
+                            <h4 class="h4_footer">1 Central Street, Boston (entrance from the store)</h4>
+                        </a>
+                        <a class="a item_row" href="https://goo.gl/maps/mJ6TU6nT95p8WTph6" target="_blank">
+                            <img src="../../assets/icons/icon-marker.svg" alt="location">
+                            <h4 class="h4_footer">18 South Park, London </h4>
+                        </a>
+                    </div>
+                </div>
+                <img src="../../assets/images/footer-puppy.png" alt="dog" class="footer_img">
             </div>
         </div>
     </footer>
