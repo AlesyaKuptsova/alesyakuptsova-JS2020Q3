@@ -600,6 +600,79 @@
 #hmt {
     display: none;
 }
+dialog::backdrop {
+    background: rgba(41, 41, 41, 0.6);
+}
+dialog {
+  background: #FAFAFA;
+  border-radius: 9px;
+  width: 900px;
+  height: 500px;
+  border: 0px;
+}
+.position_model_block {
+    flex-direction: column;
+    width: 351px;
+    height: 362px;
+    margin-left: 60px;
+    margin-top: 40px;
+}
+.position_model_block_row{
+    display: flex;
+    flex-direction: row;
+}
+.modal_close_button_320 {
+    margin-left: 890px;
+    margin-top: -60px;
+}
+.cat_modal_768 {
+    width: 480px;
+    height: 480px;
+}
+.h3_Katrine {
+    font-family: Georgia;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 35px;
+    line-height: 130%;
+    /* or 45px */
+    letter-spacing: 0.06em;
+    color: #000000;
+    margin: 0;
+}
+.h4_Katrine {
+    font-family: Georgia;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 115%;
+    /* identical to box height, or 23px */
+    letter-spacing: 0.06em;
+    color: #000000;
+    margin-top: 15px;
+}
+.p_Katrine {
+    font-family: Georgia;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 15px;
+    line-height: 110%;
+    /* or 17px */
+    letter-spacing: 0.06em;
+    margin-top: 40px;
+}
+.ul_Katrine {
+    padding-left: 15px;
+    color: #F1CDB3;
+    margin-top: 40px;
+}
+.li_Katrine {
+    font-family: Georgia;
+    font-style: normal;
+    font-size: 15px;
+    color: #000000;
+    line-height: 200%;
+}
 @media only screen and (max-width: 1279px) {
     .body {
         overflow-x: scroll;
@@ -783,6 +856,85 @@
     .hidden-menu {
         display: none;
     }
+    .hidden-menu-ticker {
+        display: none;
+    }
+    #htm {
+        display: none;
+    }
+    dialog {
+        width: 630px;
+        height: 350px;
+        border: 0px;
+        background: #FAFAFA;
+        border-radius: 9px;
+    }
+    .cat_modal_768 {
+        width: 320px;
+        height: 320px;
+    }
+    .position_model_block {
+        flex-direction: column;
+        width: 260px;
+        height: 303px;
+        margin-left: 60px;
+        margin-top: 0;
+    }
+    .position_model_block_row{
+        display: flex;
+        flex-direction: row;
+    }
+    .modal_close_button_320 {
+        margin-left: 620px;
+        margin-top: -60px;
+    }
+    .h3_Katrine {
+        font-family: Georgia;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 35px;
+        line-height: 130%;
+        /* or 45px */
+        letter-spacing: 0.06em;
+        color: #000000;
+        margin: 0;
+    }
+    .h4_Katrine {
+        font-family: Georgia;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 20px;
+        line-height: 115%;
+        /* identical to box height, or 23px */
+        letter-spacing: 0.06em;
+        color: #000000;
+        margin-top: 15px;
+    }
+    .p_Katrine {
+        font-family: Georgia;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 13px;
+        line-height: 110%;
+        /* or 14px */
+        text-align: justify;
+        letter-spacing: 0.06em;
+        color: #000000;
+        margin-top: 0;
+    }
+    .ul_Katrine {
+        padding-left: 15px;
+        color: #F1CDB3;
+        margin-top: 0;
+    }
+    .li_Katrine {
+        font-family: Georgia;
+        font-style: normal;
+        font-size: 15px;
+        color: #000000;
+        line-height: 130%;
+        margin-top: 0;
+    }
 }
 @media only screen and (max-width: 767px) {
     .not_only {
@@ -799,9 +951,7 @@
     .menu {
         display: none;
     }
-/*стилизуем менюшку*/
     .hidden-menu {
-        display: block;
         position: fixed;
         list-style:none;
         padding: 10px;
@@ -816,12 +966,11 @@
         z-index: 2;
         -webkit-transform: translateZ(0);
         -webkit-backface-visibility: hidden;
+        display: block;
     }
-  /*скрываем инпут чекбокс*/
     .hidden-menu-ticker {
         display: none;
     }
-  /*общие стили значка-гамбургера, самого лэйбла*/
     .btn-menu {
         color: #F1CDB3;
         padding: 2px;
@@ -837,7 +986,6 @@
         -webkit-backface-visibility: hidden;
         position: relative;
     }
-  /*общие стили полосок*/
     .btn-menu span {
         display: block;
         height: 2px;
@@ -846,22 +994,19 @@
         transition: all .1s linear .1s;
         position: relative;
     }
-  /*прибиваем к верху лэйбла первую полоску*/
     .btn-menu span.first {
         margin-top: 0;
     }
-  /*при нажатии на бургер двигаем его и делаем другой фон бургеру*/
     .hidden-menu-ticker:checked ~ .btn-menu {
         position: absolute;
         left: auto;
         right: 0;
         margin-top: 30px;
-        position: fixed;
     }
-  /*и дальше стили меняющие бургер, двигающие менюшку по событию - нажатие на значек бургера*/
     .hidden-menu-ticker:checked ~ .hidden-menu {
         right: 0;
         transition: all .1s linear .1s;
+        display: none;
     }
     .hidden-menu-ticker:checked ~ .btn-menu span.first {
         -webkit-transform: rotate(-90deg);
@@ -886,7 +1031,7 @@
         opacity: 0;
         transition: opacity 0.3s ease;
       }
-    .hidden-menu-ticker:checked ~ .hidden-menu + .backdrop {
+    .hidden-menu-ticker:checked ~ .backdrop {
         left: 0;
         opacity: 1;
       }
@@ -907,49 +1052,6 @@
     .list_link_active {
         color: #FAFAFA;
     }
-   /* .dropdown {
-        position: relative;
-    }
-    .dropdown-content a {
-        color: black;
-        padding: 12px 16px;
-        text-decoration: none;
-        display: block;
-    }
-    .dropdown a:hover {
-        background-color: #ddd;
-    }
-    .dropdown-content {
-        display: none;
-        position: inherit;
-        background-color: #f1f1f1;
-        width: 100px;
-        overflow: auto;
-        z-index: 1;
-    }
-    .show {
-        display: block;
-    }
-    .container {
-      display: inline-block;
-      cursor: pointer;
-      margin-right: 53px;
-    }
-    .bar1, .bar2, .bar3 {
-      width: 30px;
-      border: 1px solid #F1CDB3;
-      margin: 6px 0;
-      transition: 0.4s;
-    }
-    .change .bar1 {
-      -webkit-transform: rotate(-45deg) translate(-9px, 6px);
-      transform: rotate(-45deg) translate(-5px, 6px);
-    }
-    .change .bar2 {opacity: 0;}
-    .change .bar3 {
-      -webkit-transform: rotate(45deg) translate(-8px, -8px);
-      transform: rotate(45deg) translate(-5px, -8px);
-    }*/
     .logo_title {
         margin-left: 10px;
     }
@@ -1298,5 +1400,73 @@
     }
     .body {
         overflow-x: scroll;
+    }
+    dialog {
+        width: 240px;
+        height: 341px;
+        border: 0px;
+        background: #FAFAFA;
+        border-radius: 9px;
+        border-top: 0;
+    }
+    .h3_Katrine {
+        font-family: Georgia;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 35px;
+        line-height: 130%;
+        /* or 45px */
+        letter-spacing: 0.06em;
+        color: #000000;
+        margin: 0;
+        text-align: center;
+    }
+    .h4_Katrine {
+        font-family: Georgia;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 20px;
+        line-height: 115%;
+        /* identical to box height, or 23px */
+        letter-spacing: 0.06em;
+        color: #000000;
+        text-align: center;
+        margin-top: 15px;
+    }
+    .p_Katrine {
+        font-family: Georgia;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 13px;
+        line-height: 110%;
+        /* or 14px */
+        text-align: justify;
+        letter-spacing: 0.06em;
+        color: #000000;
+        margin-top: 0;
+    }
+    .ul_Katrine {
+        padding-left: 15px;
+        color: #F1CDB3;
+    }
+    .li_Katrine {
+        font-family: Georgia;
+        font-style: normal;
+        font-size: 15px;
+        color: #000000;
+        line-height: 130%;
+    }
+    .cat_modal_768 {
+        display: none;
+    }
+    .modal_close_button_320 {
+        margin-left: 230px;
+        margin-top: -60px;
+    }
+    .position_model_block {
+        margin-left: 0px;
+    }
+    #dialogthree {
+        display: none;
     }
 }

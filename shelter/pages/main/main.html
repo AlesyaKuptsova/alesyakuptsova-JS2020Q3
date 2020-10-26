@@ -15,28 +15,12 @@
             <h1 class="logo_title">Cozy House</h1>
             <div class="logo_subtitle">Shelter for pets in Boston</div>
             </div>
-         <!--   <div class="dropdown">
-                <div onclick="myFunction()" class="container" id="check">
-                  <div class="bar1"></div>
-                  <div class="bar2"></div>
-                  <div class="bar3"></div>
-                </div>
-                <div id="myDropdown" class="dropdown-content">
-                    <a class="list_link list_link_disabled list_link_active m" href="main.html">About the shelter</a>
-                    <a class="list_link list_link_disabled m" href="../pets/pets.html">Our pets</a>
-                    <a class="list_link list_link_disabled m" href="#help">Help the shelter</a>
-                    <a class="list_link list_link_disabled m" href="#contacts">Contacts</a>
-                </div>
-            </div> -->
-            <!-- input нужен для того, что бы в дальнейшем задать стили иконке ☰ по событию checked, то есть когда меню будем открыать и закрыать -->
             <input type="checkbox" id="hmt" class="hidden-menu-ticker">
-            <!-- Далее вёрстка самой иконки. Разделена на спаны, что бы красиво превращать в крестик при открытии (почти как в Телеграме :) -->
             <label class="btn-menu" for="hmt">
             <span class="first" id="first"></span>
             <span class="second" id="second"></span>
             <span class="third" id="third"></span>
             </label>
-            <!-- Менюшка раскрывающаяся и скрывающаяся -->
             <ul class="hidden-menu" id="menu">
             <div class="logo" style="margin-top: 30px;">
             <h1 class="logo_title">Cozy House</h1>
@@ -105,21 +89,72 @@
                     <div class="button_slider">
                         <img src="../../assets/icons/button_arrow.png" alt="button arrow" class="button_arrow">
                     </div>
-                    <div class="card">
+                    <div class="card" id="show">
                         <img src="../../assets/images/pets-katrine.png" alt="cat">
                         <text class="text_card">Katrine</text>
                         <div class="button_card">Learn more</div>
                     </div>
-                    <div class="card inv">
+                    <dialog>
+                        <img src="../../assets/icons/modal_close_button.png" alt="modal_close_button" id="close" class="modal_close_button_320">
+                        <section class="position_model_block_row">
+                            <img src="../../assets/images/pets-katrine.png" alt="cat" class="cat_modal_768">
+                            <section class="position_model_block">
+                                <h3 class="h3_Katrine">Katrine</h3>
+                                <h4 class="h4_Katrine">Cat - British Shorthair</h4>
+                                <p class="p_Katrine">Katrine is a beautiful girl. She is as soft as the finest velvet with a thick lush fur. Will love you until the last breath she takes as long as you are the one. She is picky about her affection. She loves cuddles and to stretch into your hands for a deeper relaxations.</p>
+                                <ul class="ul_Katrine">
+                                    <li><span class="li_Katrine"><strong>Age:</strong> 6 months</span></li>
+                                    <li><span class="li_Katrine"><strong>Inoculations:</strong> panleukopenia</span></li>
+                                    <li><span class="li_Katrine"><strong>Diseases:</strong> none</span></li>
+                                    <li><span class="li_Katrine"><strong>Parasites:</strong> none</span></li>
+                                </ul>
+                            </section>
+                        </section>
+                    </dialog>
+                    <div class="card inv" id="show_two">
                         <img src="../../assets/images/pets-jennifer.png" alt="dog">
                         <text class="text_card">Jennifer</text>
                         <div class="button_card">Learn more</div>
                     </div>
-                    <div class="card_end">
+                    <dialog id='dialog'>
+                        <img src="../../assets/icons/modal_close_button.png" alt="modal_close_button" id="close_two" class="modal_close_button_320">
+                        <section class="position_model_block_row">
+                            <img src="../../assets/images/pets-jennifer.png" alt="cat" class="cat_modal_768">
+                            <section class="position_model_block">
+                                <h3 class="h3_Katrine">Jennifer</h3>
+                                <h4 class="h4_Katrine">Dog - Labrador</h4>
+                                <p class="p_Katrine">Jennifer is a sweet 2 months old Labrador that is patiently waiting to find a new forever home. This girl really enjoys being able to go outside to run and play, but won't hesitate to play up a storm in the house if she has all of her favorite toys.</p>
+                                <ul class="ul_Katrine">
+                                    <li><span class="li_Katrine"><strong>Age:</strong> 2 months</span></li>
+                                    <li><span class="li_Katrine"><strong>Inoculations:</strong> parvovirus</span></li>
+                                    <li><span class="li_Katrine"><strong>Diseases:</strong> none</span></li>
+                                    <li><span class="li_Katrine"><strong>Parasites:</strong> none</span></li>
+                                </ul>
+                            </section>
+                        </section>
+                    </dialog>
+                    <div class="card_end" id="show_three">
                         <img src="../../assets/images/pets-woody.png" alt="dog">
                         <text class="text_card">Woody</text>
                         <div class="button_card">Learn more</div>
                     </div>
+                    <dialog id='dialogthree'>
+                        <img src="../../assets/icons/modal_close_button.png" alt="modal_close_button" id="close_three" class="modal_close_button_320">
+                        <section class="position_model_block_row">
+                            <img src="../../assets/images/pets-woody.png" alt="cat" class="cat_modal_768">
+                            <section class="position_model_block">
+                                <h3 class="h3_Katrine">Woody</h3>
+                                <h4 class="h4_Katrine">Dog - Golden Retriever</h4>
+                                <p class="p_Katrine">Woody is a handsome 3 1/2 year old boy. Woody does know basic commands and is a smart pup. Since he is on the stronger side, he will learn a lot from your training. Woody will be happier when he finds a new family that can spend a lot of time with him.</p>
+                                <ul class="ul_Katrine">
+                                    <li><span class="li_Katrine"><strong>Age:</strong> 3 years 6 months</span></li>
+                                    <li><span class="li_Katrine"><strong>Inoculations:</strong> adenovirus, distemper</span></li>
+                                    <li><span class="li_Katrine"><strong>Diseases:</strong> right back leg mobility reduced</span></li>
+                                    <li><span class="li_Katrine"><strong>Parasites:</strong> none</span></li>
+                                </ul>
+                            </section>
+                        </section>
+                    </dialog>
                     <div class="button_slider">
                         <img src="../../assets/icons/button_arrow_r.png" alt="button arrow" class="button_arrow">
                     </div>

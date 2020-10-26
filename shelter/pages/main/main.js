@@ -1,16 +1,28 @@
-function myFunction() {
-    document.getElementById("check").classList.toggle("change");
-    document.getElementById("myDropdown").classList.toggle("show");
-}
 document.addEventListener("click", function(e) {
     let m = document.getElementById('menu');
-    let a = document.getElementById('backdrop');
-    if (e.target.id != 'hmt' && e.target.id != 'menu') {
-      m.style.display = 'none';
-      a.style.display = 'none';
-      m.style.right
-    } else if (e.target.id == 'hmt') {
+    if (e.target.id == 'hmt' && e.target.id != 'menu') {
       m.style.display = (m.style.display != 'block') ? 'block' : 'none';
-      a.style.display = (a.style.display != 'block') ? 'block' : 'none';
     }
   });
+var dialog = document.querySelector('dialog');
+document.querySelector('#show').onclick = function() {
+  dialog.showModal();
+};
+document.querySelector('#close').onclick = function() {
+  dialog.close();
+};
+
+var dialogone = document.getElementById('dialog');
+document.querySelector('#show_two').onclick = function() {
+  dialogone.showModal();
+};
+document.querySelector('#close_two').onclick = function() {
+  dialogone.close();
+};
+var dialogtwo = document.getElementById('dialogthree');
+document.querySelector('#show_three').onclick = function() {
+  dialogtwo.showModal();
+};
+document.querySelector('#close_three').onclick = function() {
+  dialogtwo.close();
+};
