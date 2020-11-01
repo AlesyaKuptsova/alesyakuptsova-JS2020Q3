@@ -6,8 +6,8 @@
     "done", "shift", "z", "x", "c", "v", "b", "n", "m", ",<", ".>", "?/",
     "EN/RU", "space", "sound"
   ], ["1!", "2\"", "3№", "4;", "5%", "6:", "7?", "8*", "9(", "0)", "backspace",
-  "й", "ц", "у", "к", "е", "н", "г", "ш", "щ", "з", "х", "ъ",
-  "caps", "ф", "ы", "в", "а", "п", "р", "о", "л", "д", "ж", "э", "enter",
+  "й", "ц", "у", "к", "е", "н", "г", "ш", "щ", "з", "х", "ъ", "enter",
+  "caps", "ф", "ы", "в", "а", "п", "р", "о", "л", "д", "ж", "э", 
   "done", "shift", "я", "ч", "с", "м", "и", "т", "ь", "б", "ю", ".,",
   "EN/RU", "space", "sound"]];
 
@@ -73,7 +73,7 @@ const Keyboard = {
     let keyLayout = keyLayouts[languageIndex];
     keyLayout.forEach(key => {
       const keyElement = document.createElement("button");
-      const insertLineBreak = ["backspace", "p", "ъ", "enter", "?/", ".,"].indexOf(key) !== -1;
+      const insertLineBreak = ["backspace", "p", "э", "enter", "?/", ".,"].indexOf(key) !== -1;
 
       // Add attributes/classes
       keyElement.setAttribute("type", "button");
