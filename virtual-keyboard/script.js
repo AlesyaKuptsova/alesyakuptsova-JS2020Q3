@@ -7,7 +7,7 @@
     "EN/RU", "space", "sound"
   ], ["1!", "2\"", "3№", "4;", "5%", "6:", "7?", "8*", "9(", "0)", "backspace",
   "й", "ц", "у", "к", "е", "н", "г", "ш", "щ", "з", "х", "ъ", "enter",
-  "caps", "ф", "ы", "в", "а", "п", "р", "о", "л", "д", "ж", "э", 
+  "caps", "ф", "ы", "в", "а", "п", "р", "о", "л", "д", "ж", "э",
   "done", "shift", "я", "ч", "с", "м", "и", "т", "ь", "б", "ю", ".,",
   "EN/RU", "space", "sound"]];
 
@@ -110,6 +110,7 @@ const Keyboard = {
           keyElement.classList.toggle("keyboard__key--active", this.properties.shift);
           keyElement.innerHTML = createIconHTML("arrow_circle_up");
 
+
           keyElement.addEventListener("click", () => {
             this._toggleShift();
             keyElement.classList.toggle("keyboard__key--active", this.properties.shift);
@@ -157,7 +158,11 @@ const Keyboard = {
 
         case "EN/RU":
           keyElement.classList.add("keyboard__key--wide");
-          keyElement.innerHTML = createIconHTML("language");
+          if(languageIndex  === 0) {
+            keyElement.innerText = "EN";
+          } else {
+            keyElement.innerText = "RU";
+          }
 
           keyElement.addEventListener("click", () => {
             this.properties.languageIndex = (this.properties.languageIndex+1) % 2;
@@ -165,7 +170,7 @@ const Keyboard = {
             this.elements.keysContainer.querySelectorAll('*').forEach(n => n.remove());
             this.elements.keysContainer.appendChild(this._createKeys(this.properties.languageIndex));
             this.elements.keys = this.elements.keysContainer.querySelectorAll(".keyboard__key");
-
+            
             const audio = document.querySelector('.kick');
             this._playSound(audio);
           });
