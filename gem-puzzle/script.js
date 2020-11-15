@@ -108,6 +108,7 @@ class Game {
     this.state = state;
     this.tickId = null;
     this.tick = this.tick.bind(this);
+    this.createGrid();
     this.render();
     this.handleClickBox = this.handleClickBox.bind(this);
   }
@@ -149,63 +150,84 @@ class Game {
           });
         }
       }
+      this.createGrid();
     }.bind(this);
   }
+
   createGrid() {
-    
+    const currentBoard = this;
+    const grid = this.state.grid;
+    const status = this.state.status;
+     // Render grid
+     const newGrid = document.createElement("div");
+     newGrid.className = "grid";
+
+     for (let i = 0; i < 4; i++) {
+       for (let j = 0; j < 4; j++) {
+         const button = document.createElement("button");
+         button.className = '.grid button';
+
+         const handleClick = this.handleClickBox(new Box(j, i));
+
+         //if (status === "playing") {
+         //  button.addEventListener("click", handleClick);
+         //}
+
+         button.textContent = grid[i][j] === 0 ? "" : grid[i][j].toString();
+
+         button.onmousedown = function(e) {
+           let buttonCopy = button.cloneNode(true);
+           newGrid.appendChild(buttonCopy);
+           buttonCopy.style.position = 'absolute';
+           moveAt(e);
+           buttonCopy.style.zIndex = 1000;
+           let mouseWasMoving = false;
+
+          function moveAt(e) {
+             buttonCopy.style.left = e.pageX - buttonCopy.offsetWidth / 2 + 'px';
+             buttonCopy.style.top = e.pageY - buttonCopy.offsetHeight / 2 + 'px';
+           }
+           document.onmousemove = function(e) {
+             moveAt(e);
+             mouseWasMoving = true;
+           }
+           buttonCopy.onmouseup = function(e) {
+             document.onmousemove = null;
+             buttonCopy.onmouseup = null;
+             buttonCopy.remove();
+            let dropElement = document.elementFromPoint(e.pageX, e.pageY);
+            if (!mouseWasMoving || (dropElement.className === ".grid button" && dropElement.textContent === '' && dropElement !== button)) {
+              handleClick();
+            }else {
+              currentBoard.createGrid();
+            }
+           }
+           button.textContent = '';
+         }
+         button.ondragstart = function() {
+           return false;
+         };
+         newGrid.appendChild(button);
+       }
+     }
+     document.querySelector(".grid").replaceWith(newGrid);
+
   }
-
-
-
 
   render() {
     const { grid, move, time, status } = this.state;
-
-    // Render grid
-    const newGrid = document.createElement("div");
-    newGrid.className = "grid";
-    for (let i = 0; i < 4; i++) {
-      for (let j = 0; j < 4; j++) {
-        const button = document.createElement("button");
-
-        if (status === "playing") {
-          button.addEventListener("click", this.handleClickBox(new Box(j, i)));
-        }
-
-        button.textContent = grid[i][j] === 0 ? "" : grid[i][j].toString();
-        /*button.onmousedown = function(e) {
-          button.style.position = 'absolute';
-          moveAt(e);
-          button.style.zIndex = 1000;
-          function moveAt(e) {
-            button.style.left = e.pageX - button.offsetWidth / 2 + 'px';
-            button.style.top = e.pageY - button.offsetHeight / 2 + 'px';
-          }
-          document.onmousemove = function(e) {
-            moveAt(e);
-          }
-          button.onmouseup = function() {
-            document.onmousemove = null;
-            button.onmouseup = null;
-          }
-        }
-        button.ondragstart = function() {
-          return false;
-        };*/
-        newGrid.appendChild(button);
-      }
-    }
-    document.querySelector(".grid").replaceWith(newGrid);
 
     // Render button
     const newButton = document.createElement("button");
     if (status === "ready") newButton.textContent = "Play";
     if (status === "playing") newButton.textContent = "Reset";
     if (status === "won") newButton.textContent = "Play";
+
     newButton.addEventListener("click", () => {
       clearInterval(this.tickId);
       this.tickId = setInterval(this.tick, 1000);
       this.setState(State.start());
+      this.createGrid();
     });
     document.querySelector(".nav button").replaceWith(newButton);
 
@@ -225,6 +247,7 @@ class Game {
         this.state.move = valuesave['move'];
         this.state.time = valuesave['time'];
         this.state.status = valuesave['status'];
+        this.createGrid();
         this.render();
       }
     });
@@ -244,6 +267,7 @@ class Game {
     }
   }
 }
+
 var m = document.createElement("SPAN");
 m.className = "move";
 document.body.appendChild(m);
