@@ -111,6 +111,7 @@ class Game {
     this.createGrid();
     this.render();
     this.handleClickBox = this.handleClickBox.bind(this);
+    this.sound = false;
   }
 
   static ready() {
@@ -199,6 +200,7 @@ class Game {
             }else {
               currentBoard.createGrid();
             }
+            currentBoard.playSound();
            }
            button.textContent = '';
          }
@@ -214,6 +216,7 @@ class Game {
 
   render() {
     const { grid, move, time, status } = this.state;
+    const game = this;
 
     // Render button
     const newButton = document.createElement("button");
@@ -234,6 +237,20 @@ class Game {
     save.addEventListener("click", () => {
       const value = {grid: this.state.grid, move: this.state.move, time: this.state.time, status: this.state.status};
       localStorage.setItem(savedGameKey, JSON.stringify(value));
+    });
+
+    let sound = document.getElementById("sound");
+    let updateSoundButton = function() {
+      if(game.sound) {
+        sound.style.background =  '#58afee';
+      } else {
+        sound.style.background = "";
+      }
+    }
+    updateSoundButton();
+    sound.addEventListener("click", () => {
+      game.sound = !game.sound;
+      updateSoundButton();
     });
 
     let load = document.getElementById("load");
@@ -260,9 +277,21 @@ class Game {
     // Render message
     if (status === "won") {
       document.querySelector(".message").textContent = `Ура! Вы решили головоломку за ${timeText} и ${move} ходов`;
+      document.querySelector(".game").style.background = "red";
     } else {
       document.querySelector(".message").textContent = "";
+      document.querySelector(".game").style.background = "";
     }
+  }
+
+  playSound() {
+    let audio = document.querySelector('.chips');
+    if(!this.sound) {
+      return;
+    }
+    if (!audio) return;
+    audio.currentTime = 0;
+    audio.play();
   }
 }
 
@@ -277,5 +306,6 @@ document.body.appendChild(timeButton);
 function addZero(n) {
   return (parseInt(n, 10) < 10 ? '0' : '') + n;
 }
+
 
 const GAME = Game.ready();
