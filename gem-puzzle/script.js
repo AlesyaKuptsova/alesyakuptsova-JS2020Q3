@@ -108,9 +108,11 @@ class Game {
     this.state = state;
     this.tickId = null;
     this.tick = this.tick.bind(this);
+    this.createControls();
     this.createGrid();
     this.render();
     this.handleClickBox = this.handleClickBox.bind(this);
+    this.sound = false;
   }
 
   static ready() {
@@ -155,9 +157,9 @@ class Game {
   }
 
   createGrid() {
-    const currentBoard = this;
-    const grid = this.state.grid;
-    const status = this.state.status;
+    const { grid, move, time, status } = this.state;
+    const game = this;
+    
      // Render grid
      const newGrid = document.createElement("div");
      newGrid.className = "grid";
@@ -172,6 +174,9 @@ class Game {
          button.textContent = grid[i][j] === 0 ? "" : grid[i][j].toString();
 
          button.onmousedown = function(e) {
+           if (game.state.status !== "playing") {
+             return;
+           }
            let buttonCopy = button.cloneNode(true);
            newGrid.appendChild(buttonCopy);
            buttonCopy.style.position = 'absolute';
@@ -193,34 +198,52 @@ class Game {
              document.onmousemove = null;
              buttonCopy.onmouseup = null;
              buttonCopy.remove();
+
             let dropElement = document.elementFromPoint(e.pageX, e.pageY);
             if (!mouseWasMoving || (dropElement.className === ".grid button" && dropElement.textContent === '' && dropElement !== button)) {
               handleClick();
             }else {
-              currentBoard.createGrid();
+              game.createGrid();
             }
+            game.playSound();
            }
            button.textContent = '';
          }
+
          button.ondragstart = function() {
            return false;
          };
+
          newGrid.appendChild(button);
        }
      }
      document.querySelector(".grid").replaceWith(newGrid);
 
-  }
-
-  render() {
-    const { grid, move, time, status } = this.state;
-
     // Render button
-    const newButton = document.createElement("button");
+    const newButton = document.getElementById('playButton');
     if (status === "ready") newButton.textContent = "Play";
     if (status === "playing") newButton.textContent = "Reset";
     if (status === "won") newButton.textContent = "Play";
 
+    // Render message
+    if (status === "won") {
+      const timeText = `${addZero(Math.floor(time/60))}:${addZero(time % 60)}`;
+      document.querySelector(".message").textContent = `Ура! Вы решили головоломку за ${timeText} и ${move} ходов`;
+      document.querySelector(".game").style.background = "red";
+    } else {
+      document.querySelector(".message").textContent = "";
+      document.querySelector(".game").style.background = "";
+    }
+
+    // Render move
+    moveButton.textContent = `Move: ${move}`;
+
+  }
+  createControls() {
+    const game = this;
+
+    const newButton = document.createElement("button");
+    newButton.setAttribute('id', 'playButton');
     newButton.addEventListener("click", () => {
       clearInterval(this.tickId);
       this.tickId = setInterval(this.tick, 1000);
@@ -234,6 +257,21 @@ class Game {
     save.addEventListener("click", () => {
       const value = {grid: this.state.grid, move: this.state.move, time: this.state.time, status: this.state.status};
       localStorage.setItem(savedGameKey, JSON.stringify(value));
+    });
+
+    let sound = document.getElementById("sound");
+    let updateSoundButton = function() {
+      if(game.sound) {
+        sound.style.background =  '#58afee';
+      } else {
+        sound.style.background = "";
+      }
+    }
+
+    updateSoundButton();
+    sound.addEventListener("click", () => {
+      game.sound = !game.sound;
+      updateSoundButton();
     });
 
     let load = document.getElementById("load");
@@ -250,19 +288,25 @@ class Game {
       }
     });
 
-    // Render move
-    moveButton.textContent = `Move: ${move}`;
+  }
+
+  render() {
+    const { grid, move, time, status } = this.state;
 
     // Render time
     const timeText = `${addZero(Math.floor(time/60))}:${addZero(time % 60)}`;
     timeButton.textContent = `Time: ${timeText}`;
 
-    // Render message
-    if (status === "won") {
-      document.querySelector(".message").textContent = `Ура! Вы решили головоломку за ${timeText} и ${move} ходов`;
-    } else {
-      document.querySelector(".message").textContent = "";
+  }
+
+  playSound() {
+    let audio = document.querySelector('.chips');
+    if(!this.sound) {
+      return;
     }
+    if (!audio) return;
+    audio.currentTime = 0;
+    audio.play();
   }
 }
 
