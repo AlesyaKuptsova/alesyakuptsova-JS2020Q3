@@ -169,10 +169,6 @@ class Game {
 
          const handleClick = this.handleClickBox(new Box(j, i));
 
-         //if (status === "playing") {
-         //  button.addEventListener("click", handleClick);
-         //}
-
          button.textContent = grid[i][j] === 0 ? "" : grid[i][j].toString();
 
          button.onmousedown = function(e) {
@@ -187,10 +183,12 @@ class Game {
              buttonCopy.style.left = e.pageX - buttonCopy.offsetWidth / 2 + 'px';
              buttonCopy.style.top = e.pageY - buttonCopy.offsetHeight / 2 + 'px';
            }
+
            document.onmousemove = function(e) {
              moveAt(e);
              mouseWasMoving = true;
            }
+
            buttonCopy.onmouseup = function(e) {
              document.onmousemove = null;
              buttonCopy.onmouseup = null;
@@ -253,11 +251,11 @@ class Game {
     });
 
     // Render move
-    m.textContent = `Move: ${move}`;
+    moveButton.textContent = `Move: ${move}`;
 
     // Render time
     const timeText = `${addZero(Math.floor(time/60))}:${addZero(time % 60)}`;
-    t.textContent = `Time: ${timeText}`;
+    timeButton.textContent = `Time: ${timeText}`;
 
     // Render message
     if (status === "won") {
@@ -268,13 +266,13 @@ class Game {
   }
 }
 
-var m = document.createElement("SPAN");
-m.className = "move";
-document.body.appendChild(m);
+var moveButton = document.createElement("SPAN");
+moveButton.className = "move";
+document.body.appendChild(moveButton);
 
-var t = document.createElement("SPAN");
-t.className = "time";
-document.body.appendChild(t);
+var timeButton = document.createElement("SPAN");
+timeButton.className = "time";
+document.body.appendChild(timeButton);
 
 function addZero(n) {
   return (parseInt(n, 10) < 10 ? '0' : '') + n;

@@ -4,12 +4,14 @@ body {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  margin-left: 0;
+  margin-right: 0;
 }
 
 .game {
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
   padding: 15px;
-  background-color: #2b38ee;
+  background-color: #416bf7;
   border-radius: 5px;
 }
 
@@ -17,15 +19,15 @@ body {
   display: grid;
   grid-template-columns: 100px 100px 100px 100px;
   grid-template-rows: 100px 100px 100px 100px;
-  border: 1px solid #550000;
+  border: 1px solid #000000;
 }
 
 .grid button {
-  background-color: #b9b4e9;
+  background-color: #cfe7f8;
   color: #000000;
-  font-size: 28px;
+  font-size: 30px;
   font-weight: bold;
-  border: 1px solid #550000;
+  border: 1px solid #000000;
   outline: none;
   cursor: pointer;
 }
@@ -45,7 +47,7 @@ body {
   padding: 5px;
   width: 100px;
   background-color: #D4EE9F;
-  color: #1e0188;
+  color: #08021f;
   outline: none;
   cursor: pointer;
   margin: auto;
@@ -53,7 +55,7 @@ body {
 
 .nav button:hover {
   color: #030500;
-  background-color: #7fe4f1;
+  background-color: #a0d3f7;
 }
 
 .nav span {
@@ -66,43 +68,63 @@ body {
   color: black;
 }
 
+button:hover {
+  background-color:#a0d3f7;
+  border-radius: 5px;
+
+}
+
 .message {
+  order: -1;
   color:#AA3939;
   height: 80px;
+  font-size: 22px;
 }
+
 .time {
   order: -1;
-  font-size: 20px;
-  font-weight: bold;
-  color: black;
-  margin: 0;
-  padding: 0;
-}
-.move {
-  order: -1;
-  font-size: 20px;
+  font-size: 24px;
   font-weight: bold;
   color: black;
   margin: 0;
   padding: 0;
 }
 
-@media only screen and (max-width: 700px) {
+.move {
+  order: -1;
+  font-size: 24px;
+  font-weight: bold;
+  color: black;
+  margin: 0;
+  padding: 0;
+}
+
+@media only screen and (max-width: 550px) {
 
   .grid {
     display: grid;
-    grid-template-columns: 80px 80px 80px 80px;
-    grid-template-rows: 80px 80px 80px 80px;
-    border: 1px solid #550000;
+    grid-template-columns: 70px 70px 70px 70px;
+    grid-template-rows: 70px 70px 70px 70px;
   }
 
   .grid button {
-    font-size: 24px;
+    font-size: 26px;
   }
 
   .nav button {
     font-size: 20px;
     width: 80px;
+  }
+  .time {
+    font-size: 20px;
+  }
+
+  .move {
+    font-size: 20px;
+  }
+
+  .message {
+    font-size: 14px;
   }
 
 }
