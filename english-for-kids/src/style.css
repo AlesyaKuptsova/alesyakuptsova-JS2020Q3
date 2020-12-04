@@ -1,0 +1,261 @@
+body {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+   width: 100%;
+}
+
+/* From https://codepen.io/erikterwan/pen/EVzeRP */
+#menuToggle
+{
+  display: block;
+  position: relative;
+  top: 30px;
+  left: 100px;
+  z-index: 1;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+#menuToggle a
+{
+  text-decoration: none;
+  color: #ffffff;
+  transition: color 0.3s ease;
+}
+
+#menuToggle a:hover
+{
+  color:  #000000;
+}
+
+#menuToggle input
+{
+  display: block;
+  width: 40px;
+  height: 32px;
+  position: absolute;
+  top: -7px;
+  left: -5px;
+  cursor: pointer;
+  opacity: 0;
+  z-index: 2;
+  -webkit-touch-callout: none;
+}
+
+#menuToggle span
+{
+  display: block;
+  width: 33px;
+  height: 4px;
+  margin-bottom: 5px;
+  position: relative;
+  background: #000000;
+  border-radius: 3px;
+  z-index: 1;
+  transform-origin: 4px 0px;
+  transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+              opacity 0.55s ease;
+}
+
+#menuToggle span:first-child
+{
+  transform-origin: 0% 0%;
+}
+
+#menuToggle span:nth-last-child(2)
+{
+  transform-origin: 0% 100%;
+}
+
+
+#menuToggle input:checked ~ span
+{
+  opacity: 1;
+  transform: rotate(45deg) translate(-2px, -1px);
+  background:  white;
+}
+
+#menuToggle input:checked ~ span:nth-last-child(3)
+{
+  opacity: 0;
+  transform: rotate(0deg) scale(0.2, 0.2);
+}
+
+
+#menuToggle input:checked ~ span:nth-last-child(2)
+{
+  transform: rotate(-45deg) translate(0, -1px);
+}
+
+#menu
+{
+  position: absolute;
+  width: 300px;
+  height: 850px;
+  margin: -100px 0 0 -110px;
+  padding: 50px;
+  padding-top: 125px;
+  background:#2196F3;
+  list-style-type: none;
+  -webkit-font-smoothing: antialiased;
+  transform-origin: 0% 0%;
+  transform: translate(-100%, 0);
+  transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+}
+.shadow {
+    background: rgb(0, 0, 0); /* Цвет фона */
+    box-shadow: 0 0 10px rgba(0,0,0,0.5); /* Параметры тени */
+    padding: 10px;
+}
+
+#menu li
+{
+  padding: 10px 0;
+  font-size: 22px;
+}
+
+#menuToggle input:checked ~ ul
+{
+  transform: none;
+}
+
+.icon {
+  width: 50px;
+  height: 50px;
+  margin-right: 20px;
+}
+.icon:hover {
+  transform: rotateX(180deg);
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 150px;
+    height: 44px;
+    margin-left: 80%;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(247, 235, 59, 0.89);
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 37px;
+    width: 44px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+input:checked + .slider {
+    background-color: #2196F3;
+}
+
+input:focus + .slider {
+    box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+    -webkit-transform: translateX(100px);
+    -ms-transform: translateX(100px);
+    transform: translateX(100px);
+}
+
+.slider.round {
+    border-radius: 44px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}
+.cards-container {
+  display: flex;
+  flex-wrap: wrap-reverse;
+  margin-left: 150px;
+}
+.card {
+  background-color: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(0, 0, 0, 0.8);
+  border-radius: 44px;
+  margin: 20px;
+  width: 300px;
+  height: 280px;
+  text-align: center;
+}
+
+.text_icon_card {
+  display: flex;
+}
+.img_category {
+  width: 300px;
+  height: 220px;
+  border-radius: 44px;
+}
+.rotate_icon {
+  width: 30px;
+  height: 30px;
+  margin: 10px 30px auto auto;
+}
+
+.link_categories_card {
+  text-decoration: none;
+  color: #2196F3;
+}
+.link_categories_card:hover {
+  color: #000000;
+}
+
+.footer {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  margin: 50px auto 0 auto;
+  width: 300px;
+}
+.img_category_main:hover {
+  background: rgb(0, 0, 0);
+  box-shadow: 0 0 10px rgba(0,0,0,0.5);
+  padding: 1px;
+}
+.icon_footer {
+  width: 60px;
+  height: 60px;
+}
+h1 {
+ text-align: center;
+}
+
+h2 {
+  margin: 10px auto auto auto;
+}
+.flip-container:hover .flipper, .flip-container.hover .flipper, .flip-container.flip .flipper {
+ transform: rotateY(180deg);
+}
+
+@media only screen and (max-width: 1520px){
+  .cards-container {
+    justify-content: center;
+  }
+}
