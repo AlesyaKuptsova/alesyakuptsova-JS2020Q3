@@ -81,6 +81,9 @@ const getRandomGrid = () => {
   return grid;
 };
 
+const statusPlaying = "playing";
+const statusRedy = "ready";
+const statusWon = "won";
 class State {
   constructor(grid, move, time, status) {
     this.grid = grid;
@@ -99,10 +102,9 @@ class State {
   }
 
   static start() {
-    return new State(getRandomGrid(), 0, 0, "playing");
+    return new State(getRandomGrid(), 0, 0, statusPlaying);
   }
 }
-
 class Game {
   constructor(state) {
     this.state = state;
@@ -141,7 +143,7 @@ class Game {
         if (isSolved(newGrid)) {
           clearInterval(this.tickId);
           this.setState({
-            status: "won",
+            status: statusWon,
             grid: newGrid,
             move: this.state.move + 1
           });
@@ -159,22 +161,23 @@ class Game {
   createGrid() {
     const { grid, move, time, status } = this.state;
     const game = this;
-    
      // Render grid
      const newGrid = document.createElement("div");
+     const boardSize = 4;
+     const gridButtonClassName = '.grid button';
      newGrid.className = "grid";
 
-     for (let i = 0; i < 4; i++) {
-       for (let j = 0; j < 4; j++) {
+     for (let i = 0; i < boardSize; i++) {
+       for (let j = 0; j < boardSize; j++) {
          const button = document.createElement("button");
-         button.className = '.grid button';
+         button.className = gridButtonClassName;
 
          const handleClick = this.handleClickBox(new Box(j, i));
 
          button.textContent = grid[i][j] === 0 ? "" : grid[i][j].toString();
 
          button.onmousedown = function(e) {
-           if (game.state.status !== "playing") {
+           if (game.state.status !== statusPlaying) {
              return;
            }
            let buttonCopy = button.cloneNode(true);
@@ -200,7 +203,7 @@ class Game {
              buttonCopy.remove();
 
             let dropElement = document.elementFromPoint(e.pageX, e.pageY);
-            if (!mouseWasMoving || (dropElement.className === ".grid button" && dropElement.textContent === '' && dropElement !== button)) {
+            if (!mouseWasMoving || (dropElement.className === gridButtonClassName && dropElement.textContent === '' && dropElement !== button)) {
               handleClick();
             }else {
               game.createGrid();
@@ -221,15 +224,15 @@ class Game {
 
     // Render button
     const newButton = document.getElementById('playButton');
-    if (status === "ready") newButton.textContent = "Play";
-    if (status === "playing") newButton.textContent = "Reset";
-    if (status === "won") newButton.textContent = "Play";
+    if (status === statusRedy) newButton.textContent = "Play";
+    if (status === statusPlaying) newButton.textContent = "Reset";
+    if (status === statusWon) newButton.textContent = "Play";
 
     // Render message
-    if (status === "won") {
+    if (status === statusWon) {
       const timeText = `${addZero(Math.floor(time/60))}:${addZero(time % 60)}`;
       document.querySelector(".message").textContent = `Ура! Вы решили головоломку за ${timeText} и ${move} ходов`;
-      document.querySelector(".game").style.background = "red";
+      document.querySelector(".game").style.background = 'var(--color-message)';
     } else {
       document.querySelector(".message").textContent = "";
       document.querySelector(".game").style.background = "";
@@ -262,7 +265,7 @@ class Game {
     let sound = document.getElementById("sound");
     let updateSoundButton = function() {
       if(game.sound) {
-        sound.style.background =  '#58afee';
+        sound.style.background = 'var(--color-button-sound)';
       } else {
         sound.style.background = "";
       }

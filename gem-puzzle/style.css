@@ -1,3 +1,14 @@
+:root {
+  --color-board: #416bf7;
+  --color-black: #000000;
+  --color-grid-button: #cfe7f8;
+  --color-nav-button:  #D4EE9F;
+  --color-hover-button:#a0d3f7;
+  --color-message: #AA3939;
+  --color-box-shadow: rgba(0, 0, 0, 0.5);
+  --color-button-sound: #58afee;
+}
+
 body {
   margin-top: 30px;
   display: flex;
@@ -9,9 +20,9 @@ body {
 }
 
 .game {
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 1px 4px var(--color-box-shadow);
   padding: 15px;
-  background-color: #416bf7;
+  background-color: var(--color-board);
   border-radius: 5px;
 }
 
@@ -19,15 +30,15 @@ body {
   display: grid;
   grid-template-columns: 100px 100px 100px 100px;
   grid-template-rows: 100px 100px 100px 100px;
-  border: 1px solid #000000;
+  border: 1px solid var(--color-black);
 }
 
 .grid button {
-  background-color: #cfe7f8;
-  color: #000000;
+  background-color: var(--color-grid-button);
+  color: var(--color-black);
   font-size: 30px;
   font-weight: bold;
-  border: 1px solid #000000;
+  border: 1px solid var(--color-black);
   outline: none;
   cursor: pointer;
 }
@@ -43,39 +54,39 @@ body {
   font-size: 24px;
   font-weight: bold;
   border-radius: 5px;
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 1px 4px var(--color-box-shadow);
   padding: 5px;
   width: 90px;
-  background-color: #D4EE9F;
-  color: #08021f;
+  background-color: var(--color-nav-button);
+  color: var(--color-black);
   outline: none;
   cursor: pointer;
   margin: auto;
 }
 
 .nav button:hover {
-  color: #030500;
-  background-color: #a0d3f7;
+  color: var(--color-black);
+  background-color: var(--color-hover-button);
 }
 
 .nav span {
   flex: 1;
   text-align: center;
   font-size: 20px;
-  color: #D4EE9F;
+  color: var(--color-nav-button);;
   font-weight: bold;
   margin: auto 0;
-  color: black;
+  color: var(--color-black);
 }
 
 button:hover {
-  background-color:#a0d3f7;
+  background-color: var(--color-hover-button);
   border-radius: 5px;
 
 }
 
 .message {
-  color:#AA3939;
+  color: var(--color-message);
   font-size: 25px;
 }
 
@@ -83,7 +94,7 @@ button:hover {
   order: -1;
   font-size: 24px;
   font-weight: bold;
-  color: black;
+  color:var(--color-black);
   margin: 0;
   padding: 0;
 }
@@ -92,7 +103,7 @@ button:hover {
   order: -1;
   font-size: 24px;
   font-weight: bold;
-  color: black;
+  color: var(--color-black);
   margin: 0;
   padding: 0;
 }
