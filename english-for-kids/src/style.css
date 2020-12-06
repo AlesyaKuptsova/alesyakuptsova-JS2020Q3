@@ -1,3 +1,10 @@
+:root {
+  --color-black: #000000;
+  --color-white: #ffffff;
+  --color-menu: #2196F3;
+  --color-slider-play: rgba(247, 235, 59, 0.89);
+}
+
 body {
     width: 100%;
     margin: 0;
@@ -20,16 +27,16 @@ html {
   user-select: none;
 }
 
-#menuToggle a
+a
 {
   text-decoration: none;
-  color: #ffffff;
+  color: var(--color-white);
   transition: color 0.3s ease;
 }
 
 #menuToggle a:hover
 {
-  color:  #000000;
+  color: var(--color-black);
 }
 
 #menuToggle input
@@ -53,7 +60,7 @@ html {
   height: 4px;
   margin-bottom: 5px;
   position: relative;
-  background: #000000;
+  background: var(--color-black);
   border-radius: 3px;
   z-index: 1;
   transform-origin: 4px 0px;
@@ -76,7 +83,7 @@ html {
 {
   opacity: 1;
   transform: rotate(45deg) translate(-2px, -1px);
-  background:  white;
+  background: var(--color-white);
 }
 
 #menuToggle input:checked ~ span:nth-last-child(3)
@@ -99,7 +106,7 @@ html {
   margin: -100px 0 0 -110px;
   padding: 50px;
   padding-top: 125px;
-  background:#2196F3;
+  background:var(--color-menu);
   list-style-type: none;
   -webkit-font-smoothing: antialiased;
   transform-origin: 0% 0%;
@@ -107,8 +114,8 @@ html {
   transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
 }
 .shadow {
-    background: rgb(0, 0, 0); /* Цвет фона */
-    box-shadow: 0 0 10px rgba(0,0,0,0.5); /* Параметры тени */
+    background: var(--color-black);
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
     padding: 10px;
 }
 
@@ -121,6 +128,10 @@ html {
 #menuToggle input:checked ~ ul
 {
   transform: none;
+}
+
+a.active {
+  color: var(--color-black);
 }
 
 .icon {
@@ -153,7 +164,7 @@ html {
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: rgba(247, 235, 59, 0.89);
+    background-color: var(--color-menu);
     -webkit-transition: .4s;
     transition: .4s;
 }
@@ -165,17 +176,17 @@ html {
     width: 44px;
     left: 4px;
     bottom: 4px;
-    background-color: white;
+    background-color: var(--color-white);
     -webkit-transition: .4s;
     transition: .4s;
 }
 
 input:checked + .slider {
-    background-color: #2196F3;
+    background-color:var(--color-slider-play);
 }
 
 input:focus + .slider {
-    box-shadow: 0 0 1px #2196F3;
+    box-shadow: 0 0 1px var(--color-slider-play);
 }
 
 input:checked + .slider:before {
@@ -222,10 +233,10 @@ input:checked + .slider:before {
 
 .link_categories_card {
   text-decoration: none;
-  color: #2196F3;
+  color: var(--color-menu);
 }
 .link_categories_card:hover {
-  color: #000000;
+  color: var(--color-black);
 }
 
 .footer {
@@ -235,7 +246,7 @@ input:checked + .slider:before {
   width: 300px;
 }
 .img_category_main:hover {
-  background: rgb(0, 0, 0);
+  background: var(--color-black);
   box-shadow: 0 0 10px rgba(0,0,0,0.5);
   padding: 1px;
 }
