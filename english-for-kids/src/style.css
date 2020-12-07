@@ -2,7 +2,10 @@
   --color-black: #000000;
   --color-white: #ffffff;
   --color-menu: #2196F3;
+  --color-bg-card: rgba(255, 255, 255, 0.8);
   --color-slider-play: rgba(247, 235, 59, 0.89);
+  --color-black-transparency-five: rgba(0,0,0,0.5);
+  --color-black-transparency-eight: rgba(0, 0, 0, 0.8);
 }
 
 body {
@@ -15,7 +18,7 @@ html {
    width: 100%;
 }
 
-/* From https://codepen.io/erikterwan/pen/EVzeRP */
+/* used information about the menu from https://codepen.io/erikterwan/pen/EVzeRP */
 #menuToggle
 {
   display: block;
@@ -37,6 +40,7 @@ a
 #menuToggle a:hover
 {
   color: var(--color-black);
+  font-style: italic;
 }
 
 #menuToggle input
@@ -115,7 +119,7 @@ a
 }
 .shadow {
     background: var(--color-black);
-    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    box-shadow: 0 0 10px var(--color-black-transparency-five);
     padding: 10px;
 }
 
@@ -132,6 +136,7 @@ a
 
 a.active {
   color: var(--color-black);
+  font-style: italic;
 }
 
 .icon {
@@ -208,8 +213,8 @@ input:checked + .slider:before {
   margin-left: 150px;
 }
 .card {
-  background-color: rgba(255, 255, 255, 0.8);
-  border: 1px solid rgba(0, 0, 0, 0.8);
+  background-color: var(--color-bg-card);
+  border: 1px solid var(--color-black-transparency-eight);
   border-radius: 44px;
   margin: 20px;
   width: 300px;
@@ -247,7 +252,7 @@ input:checked + .slider:before {
 }
 .img_category_main:hover {
   background: var(--color-black);
-  box-shadow: 0 0 10px rgba(0,0,0,0.5);
+  box-shadow: 0 0 10px var(--color-black-transparency-five);
   padding: 1px;
 }
 .icon_footer {

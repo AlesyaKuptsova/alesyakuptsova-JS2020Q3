@@ -1,11 +1,11 @@
 'use strict';
-
-export function Router(routes) {
+/*used the code(SPA) from https://medium.com/better-programming/js-vanilla-script-spa-1b29b43ea475*/
+export function Router(routes, onLoad) {
   try {
     if (!routes) {
       throw 'error: routes param is mandatory';
     }
-    this.constructor(routes);
+    this.constructor(routes, onLoad);
     this.init();
   } catch (e) {
     console.error(e);

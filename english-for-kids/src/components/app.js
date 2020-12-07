@@ -2,7 +2,49 @@
 
 import { Router } from './router.js';
 import { Route } from './route.js';
+import cardsArray from '../data/cards.js';
 
+function playSound(audio) {
+  audio.currentTime = 0;
+  audio.play();
+}
+
+function createCards(rootElement) {
+  const categoryNameElement = document.getElementById("category_name");
+  if (categoryNameElement === null) {
+    return;
+  }
+  const containers = rootElement.getElementsByClassName('cards-container');
+  if (containers.length === 0) {
+    return;
+  }
+  const container = containers.item(0);
+  const categoryName = categoryNameElement.value;
+  const currentCardsIndex = cardsArray[0].indexOf(categoryName);
+  if (currentCardsIndex === -1) {
+    return;
+  }
+  const currentCards = cardsArray[currentCardsIndex+1];
+  for (let i = 0; i < currentCards.length; ++i) {
+    const elem = currentCards[i];
+    const card = document.createElement('card');
+    card.innerHTML =
+    `<div class="card">
+     <audio src="${elem.audioSrc}"></audio>
+     <img src="${elem.image}" alt="" class="img_category">
+     <div class='text_icon_card'>
+        <h2>${elem.word}</h2>
+        <img src="assets/img/icon/rotate.svg" alt="rotate" class="rotate_icon">
+      </div>
+    </div>`;
+    container.appendChild(card);
+    card.addEventListener('click', () => {
+      playSound(card.getElementsByTagName('audio').item(0));
+    });
+  }
+}
+
+/*used the code(SPA) from https://medium.com/better-programming/js-vanilla-script-spa-1b29b43ea475*/
 (function () {
   function init() {
     let router = new Router([
@@ -20,10 +62,7 @@ import { Route } from './route.js';
   init();
 }());
 
-function createCards(rootElement) {
-}
-
-/* from https://stackoverflow.com/questions/64152962/javascript-css-hamburger-menu-working-in-codepen-but-not-when-deployed*/
+/*used the code from https://stackoverflow.com/questions/64152962/javascript-css-hamburger-menu-working-in-codepen-but-not-when-deployed*/
 
 const checkbox = document.querySelector('#myInput');
 const icon = document.querySelector('#menuToggle span');

@@ -1,5 +1,5 @@
 'use stict';
-
+/*used the code(SPA) from https://medium.com/better-programming/js-vanilla-script-spa-1b29b43ea475*/
 export function Route(name, htmlName, defaultRoute) {
   try {
     if (!name || !htmlName) {

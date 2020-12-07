@@ -1,4 +1,5 @@
 const cardsArray = [
+  ['Action (set A)', 'Action (set B)', 'Animal (set A)', 'Animal (set B)', 'Clothes', 'Emotions', 'Fruit', 'Sweets'],
   [
     {
       word: 'cry',
@@ -111,9 +112,9 @@ const cardsArray = [
       word: 'swim',
       translation: 'плавать',
       image: 'assets/img/action/swim.jpg',
-      audioSrc: 'aassets/audio/action/swim.mp3',
+      audioSrc: 'assets/audio/action/swim.mp3',
       category: 'Action (set B)',
-    }
+    },
   ],
   [
     {
@@ -358,7 +359,7 @@ const cardsArray = [
     {
       word: 'banana',
       translation: 'банан',
-      image: 'assets/img/fruit/banana.jpg',
+      image: 'assets/img/fruit/banana.jpeg',
       audioSrc: 'assets/audio/fruit/banana.mp3',
       category: 'Fruit',
     },
@@ -430,14 +431,14 @@ const cardsArray = [
     {
       word: 'cotton candy',
       translation: 'сахарная вата',
-      image: 'assets/img/sweets/cotton_candy.jpg',
+      image: 'assets/img/sweets/cotton_candy.jpeg',
       audioSrc: 'assets/audio/sweets/cotton_candy.mp3',
       category: 'Sweets',
     },
     {
       word: 'ice cream',
       translation: 'мороженое',
-      image: 'assets/img/sweets/ice_cream.jpg',
+      image: 'assets/img/sweets/ice-cream.jpg',
       audioSrc: 'assets/audio/sweets/ice_cream.mp3',
       category: 'Sweets',
     },
