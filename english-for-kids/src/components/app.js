@@ -29,18 +29,41 @@ function createCards(rootElement) {
     const elem = currentCards[i];
     const card = document.createElement('card');
     card.innerHTML =
-    `<div class="card">
-     <audio src="${elem.audioSrc}"></audio>
-     <img src="${elem.image}" alt="" class="img_category">
-     <div class='text_icon_card'>
-        <h2>${elem.word}</h2>
-        <img src="assets/img/icon/rotate.svg" alt="rotate" class="rotate_icon">
-      </div>
+    `<div class="flip-card">
+        <div class="flip-card-inner">
+           <div class="flip-card-front">
+             <audio src="${elem.audioSrc}"></audio>
+             <img src="${elem.image}" alt="" class="img_category">
+              <div class='text_icon_card'>
+                <h2>${elem.word}</h2>
+                <img src="assets/img/icon/rotate.svg" alt="rotate" class="rotate_icon">
+              </div>
+           </div>
+          <div class="flip-card-back">
+              <img src="${elem.image}" alt="dance" class="img_category">
+              <h2>${elem.translation}</h2>
+          </div>
+        </div>
     </div>`;
+
+    const rotateButton = card.getElementsByClassName('rotate_icon').item(0);
+    const flipCard = card.getElementsByClassName('flip-card-inner').item(0);
+    const cardBack = card.getElementsByClassName('flip-card-back').item(0);
+
     container.appendChild(card);
-    card.addEventListener('click', () => {
-      playSound(card.getElementsByTagName('audio').item(0));
+    card.addEventListener('click', (e) => {
+      if (!flipCard.classList.contains('do-flip')) {
+        playSound(card.getElementsByTagName('audio').item(0));
+      }
     });
+
+    cardBack.addEventListener('mouseleave', (e) => {
+      flipCard.classList.remove('do-flip');
+    });
+    rotateButton.onclick = (e) => {
+      flipCard.classList.add('do-flip');
+      e.stopPropagation();
+    };
   }
 }
 
