@@ -11,11 +11,11 @@ function playSound(audio) {
 
 function createCards(rootElement) {
   const categoryNameElement = document.getElementById("category_name");
-  if (categoryNameElement === null) {
+  if (!categoryNameElement) {
     return;
   }
   const containers = rootElement.getElementsByClassName('cards-container');
-  if (containers.length === 0) {
+  if (!containers.length) {
     return;
   }
   const container = containers.item(0);
@@ -25,8 +25,7 @@ function createCards(rootElement) {
     return;
   }
   const currentCards = cardsArray[currentCardsIndex+1];
-  for (let i = 0; i < currentCards.length; ++i) {
-    const elem = currentCards[i];
+  currentCards.forEach((elem) => {
     const card = document.createElement('card');
     card.innerHTML =
     `<div class="flip-card">
@@ -49,22 +48,23 @@ function createCards(rootElement) {
     const rotateButton = card.getElementsByClassName('rotate_icon').item(0);
     const flipCard = card.getElementsByClassName('flip-card-inner').item(0);
     const cardBack = card.getElementsByClassName('flip-card-back').item(0);
+    const doFlipClassName = 'do-flip';
 
     container.appendChild(card);
     card.addEventListener('click', (e) => {
-      if (!flipCard.classList.contains('do-flip')) {
+      if (!flipCard.classList.contains(doFlipClassName)) {
         playSound(card.getElementsByTagName('audio').item(0));
       }
     });
 
     cardBack.addEventListener('mouseleave', (e) => {
-      flipCard.classList.remove('do-flip');
+      flipCard.classList.remove(doFlipClassName);
     });
     rotateButton.onclick = (e) => {
-      flipCard.classList.add('do-flip');
+      flipCard.classList.add(doFlipClassName);
       e.stopPropagation();
     };
-  }
+  });
 }
 
 /*used the code(SPA) from https://medium.com/better-programming/js-vanilla-script-spa-1b29b43ea475*/
@@ -105,15 +105,15 @@ checkbox.addEventListener('click', function () {
 function updateActiveCategory() {
   const currentHash = window.location.hash;
   const elements = document.getElementsByClassName('category');
-  for (let i = 0; i < elements.length; i++) {
-    let href = elements.item(i).href;
+  elements.forEach((elem) => {
+    let href = elem.href;
     let curhash = new URL(href).hash;
     if (curhash === currentHash) {
       elements.item(i).classList.add('active');
     }else {
       elements.item(i).classList.remove('active');
     }
-  }
+  });
 }
 
 window.addEventListener('hashchange', updateActiveCategory);
