@@ -1,0 +1,307 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>Presentation: Inheritance in JavaScript</title>
+
+		<link rel="stylesheet" href="dist/reset.css">
+		<link rel="stylesheet" href="dist/reveal.css">
+		<link rel="stylesheet" href="dist/theme/black.css" id="theme">
+
+		<link rel="stylesheet" href="plugin/highlight/monokai.css" id="highlight-theme">
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section>
+					<h2>Inheritance in JavaScript</h2></br>
+					<a href="https://github.com/AlesyaKuptsova" target="_blank">by Alesia Kuptsova</a>
+				</section>
+				<section>
+					<p>
+						When it comes to inheritance, JavaScript only has one construct: objects. Each object has a private property which holds a link to another object called its <strong>prototype</strong>. That prototype object has a prototype of its own, and so on until an object is reached with null as its prototype. 
+						By definition, null has no prototype, and acts as the final link in this prototype chain.
+					</p>
+					<small><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Inheritance_and_the_prototype_chain" target="_blank">from https://developer.mozilla.org/en-US/docs/Web/JavaScript</a></small>
+				</section>
+				<section id="fragments">
+					<h3>Prototypal inheritance</h3>
+					<ol>
+						<li class="fragment">What is it?</li>
+						<li class="fragment">How does it work?</li>
+					</ol>
+				</section>
+				<section>
+				  <section id="fragments">
+					  <small>
+						In JavaScript, objects have a special hidden property [[Prototype]] , that is either null or references another object.
+						When we read some property from an object, and it’s missing, JavaScript automatically takes it from the prototype. In programming, such thing is called “prototypal inheritance”.
+						The property [[Prototype]] is internal and hidden, but there are many ways to set it.
+						<p>
+							One of them is to use the special name __proto__.
+						</p>
+					  </small>
+					  <em class="fragment">Let's see an example</em>
+				  </section>
+				  <section data-auto-animate>
+					<h2 data-id="code-title">Example:</h2>
+					<pre data-id="code-animation"><code class="hljs" data-trim data-line-number>
+						let mage = {
+							magic: true,
+							conjure() {
+							  return 'spell of fire';
+							}
+						};
+
+						let necromancer = {
+							summonsspirits: true,
+							__proto__: mage
+						};
+
+						let appearance = {
+							hair: black
+							__proto__: mage
+						};
+
+						appearance.conjure(); // spell of fire
+						appearance.summonsspirits; // true
+					</code></pre>
+					<small class="fragment">
+						<ul>There are only two limitations:
+							<li>The references can’t go in circles. JavaScript will throw an error if we try to assign __proto__ in a circle.</li>
+							<li>The value of __proto__ can be either an object or null. Other types are ignored.</li>
+						</ul>
+					</small>
+				 </section>
+				</section>
+				<section class="fragment">
+					<h3>Different ways to create objects and the resulting prototype chain</h3>
+					<ul>
+						<li class="fragment">Objects created with syntax constructs</li>
+						<li class="fragment">With a constructor</li>
+						<li class="fragment">With Object.create</li>
+						<li class="fragment">With the class keyword</li>
+
+					</ul>
+				</section>
+				<section data-auto-animate>
+					<h3 data-id="code-title">Objects created with syntax constructs</h3>
+				    <pre data-id="code-animation"><code class="hljs" data-trim data-line-number>
+					// inherits Object.prototype
+					const mage = {magic_force: 10};
+
+					// inherits Array.prototype
+					const necromancer = ['magic_force', 'magic_spell', 'magic_age'];
+
+					// inherits Function.prototype
+					function conjure() {
+						  return 'spell of fire';
+						} 
+			      </code></pre>
+				</section>
+				<section data-auto-animate>
+					<h3 data-id="code-title">With a constructor</h3>
+				    <pre data-id="code-animation"><code class="hljs" data-trim data-line-number>
+						function Conjure() {
+							this.mage = [];
+							this.spell = [];
+						  }
+
+						  Conjure.prototype = {
+							addforce: function(fire) {
+							  this.mage.push(fire);
+							}
+						  };
+
+						 const fireball = new Conjure();
+						 // fireball [[Prototype]] is the value of Conjure.prototype when new Conjure() is executed.
+			      </code></pre>
+				</section>
+				<section data-auto-animate>
+					<h3 data-id="code-title">With Object.create</h3>
+					<small>The Object.create() method creates a new object, using an existing object as the prototype of the newly created object.</small>
+				    <pre data-id="code-animation"><code class="hljs" data-trim data-line-number>
+						let mage = {magic_force: 10};
+
+						let necromancer = Object.create(mage);
+						console.log(necromancer.magic_force); // 10
+
+						let elf = Object.create(null); // elf ---> null
+			      </code></pre>
+				</section>
+				<section>
+					<section>
+						<h3 data-id="code-title">With the class keyword</h3>
+						<h5 data-id="code-title">Class inheritance</h5>
+						<pre data-id="code-animation"><code class="hljs" data-trim data-line-number>
+							class Mage {
+								constructor(name) {
+								  this.magicforce = 0;
+								  this.name = name;
+								}
+								setmagicforce(magicforce) {
+								  this.magicForce = magicForce;
+								  alert(`${this.name} has the magic force ${this.magicforce}.`);
+								}
+								nohaveforce() {
+								  this.magicforce = 0;
+								  alert(`${this.name} is muggle.`);
+								}
+							  }
+	
+							  //  "extends Magle"
+							  class Necromancer extends Mage {
+								conjure() {
+								  alert(`${this.name} uses a dark spell.`);
+								}
+							  }
+	
+							  let necromancer = new Necromancer("Alex");
+	
+							  necromancer.setmagicforce(6); // Alex has the magic force 6.
+							  necromancer.conjure(); // Alex uses a dark spell.
+					  </code></pre>
+					</section>
+					<section>
+						<h3 data-id="code-title">With the class keyword</h3>
+						<h5 data-id="code-title">Overriding a method</h5>
+						<pre data-id="code-animation"><code class="hljs" data-trim data-line-number>
+							class Mage {
+								constructor(name) {
+								  this.magicForce = 0;
+								  this.physicalStrength = 0;
+								  this.name = name;
+								}
+								setmagicforce(magicForce) {
+								  this.magicForce = magicForce;
+								  alert(`${this.name} has the magic force ${this.magicForce}.`);
+								}
+								trainthebody() {
+								  this.physicalStrength = 0;
+								  alert(`${this.name} needs to train more!`);
+								}
+							  }
+
+							  //  "extends Magle"
+							  class Necromancer extends Mage {
+								conjure() {
+								  alert(`${this.name} uses a dark spell.`);
+								}
+								trainthebody() {
+									super.trainthebody();
+									this.conjure();
+								}
+							  }
+
+							  let necromancer = new Necromancer("Alex");
+
+							  necromancer.setmagicforce(6); // Alex has the force 6.
+							  necromancer.trainthebody(); // Alex needs to train more! Alex uses a dark spell.
+					  </code></pre>
+					  <small>Arrow functions have no super</small>
+					</section>
+					<section>
+						<h3 data-id="code-title">With the class keyword</h3>
+						<h5 data-id="code-title">Overriding constructor</h5>
+						<pre data-id="code-animation"><code class="hljs" data-trim data-line-number>
+							class Mage {
+								constructor(name) {
+								  this.magicForce = 0;
+								  this.physicalStrength = 0;
+								  this.name = name;
+								}
+								setmagicforce(magicForce) {
+								  this.magicForce = magicForce;
+								  alert(`${this.name} has the magic force ${this.magicForce}.`);
+								}
+								trainthebody() {
+								  this.physicalStrength = 0;
+								  alert(`${this.name} needs to train more!`);
+								}
+							  }
+
+							  //  "extends Magle"
+							  class Necromancer extends Mage {
+								constructor(name, hairColor) {
+									super(name);
+									this.hairColor = hairColor;
+
+								conjure() {
+								  alert(`${this.name} uses a dark spell.`);
+								}
+								trainthebody() {
+									super.trainthebody();
+									this.conjure();
+								}
+							  }
+
+							  let necromancer = new Necromancer("Alex", "black");
+
+							  alert(necromancer.hairColor); // black
+					  </code></pre>
+					</section>
+				</section>
+                <section data-auto-animate>
+					<h2 data-id="code-title">Default prototype</h2>
+					<pre data-id="code-animation"><code class="hljs" data-trim data-line-number>
+						let conjure = function(){};
+						console.log(conjure.prototype);
+
+						{
+							constructor: ƒ conjure(),
+							__proto__: {
+								constructor: ƒ Object(),
+								hasOwnProperty: ƒ hasOwnProperty(),
+								isPrototypeOf: ƒ isPrototypeOf(),
+								propertyIsEnumerable: ƒ propertyIsEnumerable(),
+								toLocaleString: ƒ toLocaleString(),
+								toString: ƒ toString(),
+								valueOf: ƒ valueOf()
+							}
+						}
+
+					</code></pre>
+					<p>conjure() has a default prototype property</p>
+				</section>
+				<section>
+					<h3>Bad practice</h3>
+					<small>
+						One misfeature that is often used is to extend Object.prototype or one of the other built-in prototypes.
+						This technique is called monkey patching and breaks encapsulation.</br>
+						The only good reason for extending a built-in prototype is to backport the features of newer JavaScript engines, like Array.forEach.
+					</small>
+				</section>
+				<section>
+					<ul>
+						Useful links:
+						<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Inheritance_and_the_prototype_chain"><li>Inheritance and the prototype chain</li></a>
+						<a href="https://javascript.info/prototype-inheritance"><li>Prototypal inheritance</li></a>
+					</ul>
+				</section>
+				<section >
+					Be with us - learn JS - <p class="fragment">we have cookies ...</p>
+					<img class="fragment" src="./examples/assets/img.jpeg" width="450" height="300">
+					<p class="fragment">Thank you!</p>
+				</section>
+			</div>
+		</div>
+
+		<script src="dist/reveal.js"></script>
+		<script src="plugin/notes/notes.js"></script>
+		<script src="plugin/markdown/markdown.js"></script>
+		<script src="plugin/highlight/highlight.js"></script>
+		<script>
+			// More info about initialization & config:
+			// - https://revealjs.com/initialization/
+			// - https://revealjs.com/config/
+			Reveal.initialize({
+				hash: true,
+
+				// Learn about plugins: https://revealjs.com/plugins/
+				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+			});
+		</script>
+	</body>
+</html>
